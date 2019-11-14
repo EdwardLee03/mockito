@@ -858,15 +858,19 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="17">17. <a class="meaningful_link" href="#resetting_mocks" name="resetting_mocks">Resetting mocks</a> (Since 1.8.0)</h3>
+ * <h3 id="17">17. <a class="meaningful_link" href="#resetting_mocks" name="resetting_mocks">
+ *     Resetting mocks 重置模拟</a> (Since 1.8.0)</h3>
  *
  * Smart Mockito users hardly use this feature because they know it could be a sign of poor tests.
  * Normally, you don't need to reset your mocks, just create new mocks for each test method.
+ * 机智的Mockito用户几乎不使用此功能，因为他们知道这可能是测试不佳的迹象。
+ * 通常，您无需重置模拟，只需为每个测试方法创建新的模拟对象即可。
  * <p>
  * Instead of <code>reset()</code> please consider writing simple, small and focused test methods over lengthy, over-specified tests.
  * <b>First potential code smell is <code>reset()</code> in the middle of the test method.</b> This probably means you're testing too much.
  * Follow the whisper of your test methods: "Please keep us small & focused on single behavior".
  * There are several threads about it on mockito mailing list.
+ * 请遵循您的测试方法的耳语："请保持小巧并专注于单一的行为"。
  * <p>
  * The only reason we added <code>reset()</code> method is to
  * make it possible to work with container-injected mocks.
