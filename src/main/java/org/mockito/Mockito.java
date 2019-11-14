@@ -1346,17 +1346,23 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="33">33. <a class="meaningful_link" href="#mockito_junit_rule" name="mockito_junit_rule">Mockito JUnit rule (Since 1.10.17)</a></h3>
+ * <h3 id="33">33. <a class="meaningful_link" href="#mockito_junit_rule" name="mockito_junit_rule">
+ *     Mockito JUnit rule JUnit规则 (Since 1.10.17)</a></h3>
  *
  * Mockito now offers a JUnit rule. Until now in JUnit there were two ways to initialize fields annotated by Mockito annotations
  * such as <code>&#064;{@link Mock}</code>, <code>&#064;{@link Spy}</code>, <code>&#064;{@link InjectMocks}</code>, etc.
+ * Mockito现在提供了一个JUnit规则。到目前为止，
+ * 在JUnit中，有两种方法可以初始化由Mockito注解注释的字段。(如@{@link Mock}，@{@link Spy}，@{@link InjectMocks})
  *
  * <ul>
  *     <li>Annotating the JUnit test class with a <code>&#064;{@link org.junit.runner.RunWith}({@link MockitoJUnitRunner}.class)</code></li>
+ *     使用@{@link org.junit.runner.RunWith}({@link MockitoJUnitRunner}.class)注解注释的JUnit测试类
  *     <li>Invoking <code>{@link MockitoAnnotations#initMocks(Object)}</code> in the <code>&#064;{@link org.junit.Before}</code> method</li>
+ *     在@{@link org.junit.Before}方法中调用{@link MockitoAnnotations#initMocks(Object)}
  * </ul>
  *
- * Now you can choose to use a rule :
+ * Now you can choose to use a rule:
+ * 现在您可以选择使用规则：
  *
  * <pre class="code"><code class="java">
  * &#064;RunWith(YetAnotherRunner.class)
@@ -1367,6 +1373,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * </code></pre>
  *
  * For more information see {@link MockitoJUnit#rule()}.
+ * 有关更多信息，请参见{@link MockitoJUnit#rule()}。
  *
  *
  *
