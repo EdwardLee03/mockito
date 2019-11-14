@@ -1684,12 +1684,12 @@ import org.mockito.verification.VerificationWithTimeout;
  * <p>
  * Help Mockito! Try the new features, give us feedback, join the discussion about Mockito strictness at GitHub
  * <a href="https://github.com/mockito/mockito/issues/769">issue 769</a>.
- * 帮助Mockito！尝试新功能，给我们反馈，并加入GitHub的第769期有关Mockito严格性的讨论。
+ * 帮助Mockito！尝试新功能，给我们反馈，并加入GitHub的第769问题有关Mockito严格性的讨论。
  *
  *
  *
  * <h3 id="41">41. <a class="meaningful_link" href="#framework_integrations_api" name="framework_integrations_api">
- *      Advanced public API for framework integrations (Since 2.10.+)</a></h3>
+ *      Advanced public API for framework integrations 用于框架集成的高级公共API (Since 2.10.+)</a></h3>
  *
  * In Summer 2017 we decided that Mockito
  * <a href="https://www.linkedin.com/pulse/mockito-vs-powermock-opinionated-dogmatic-static-mocking-faber">
@@ -1700,35 +1700,47 @@ import org.mockito.verification.VerificationWithTimeout;
  * It is intended for other test tools and mocking frameworks that need to extend or wrap Mockito with some custom logic.
  * During the design and implementation process (<a href="https://github.com/mockito/mockito/issues/1110">issue 1110</a>)
  * we have developed and changed following public API elements:
+ * 在2017年夏季，我们决定Mockito应该为高级框架集成提供更好的API。
+ * 新的API不适合想要编写单元测试的用户。
  * <ul>
  *     <li>New {@link MockitoPlugins} -
  *      Enables framework integrators to get access to default Mockito plugins.
  *      Useful when one needs to implement custom plugin such as {@link MockMaker}
  *      and delegate some behavior to the default Mockito implementation.
  *     </li>
+ *     使框架集成商可以访问默认的Mockito插件。
+ *     当需要实现自定义插件并将某些行为委派给默认的Mockito实现时很有用。
  *     <li>New {@link MockSettings#build(Class)} -
  *      Creates immutable view of mock settings used later by Mockito.
  *      Useful for creating invocations with {@link InvocationFactory} or when implementing custom {@link MockHandler}.
  *     </li>
+ *     创建Mockito以后使用的模拟设置的不变视图。
+ *     对于使用{@link InvocationFactory}创建调用或实现自定义{@link MockHandler}很有用。
  *     <li>New {@link MockingDetails#getMockHandler()} -
  *      Other frameworks may use the mock handler to programmatically simulate invocations on mock objects.
  *     </li>
+ *     其他框架可能使用模拟处理程序以编程方式模拟对模拟对象的调用。
  *     <li>New {@link MockHandler#getMockSettings()} -
  *      Useful to get hold of the setting the mock object was created with.
  *     </li>
+ *     有助于掌握创建模拟对象的设置。
  *     <li>New {@link InvocationFactory} -
  *      Provides means to create instances of {@link Invocation} objects.
  *      Useful for framework integrations that need to programmatically simulate method calls on mock objects.
  *     </li>
+ *     提供创建调用对象实例的方法。对于需要以编程方式模拟模拟对象上的方法调用的框架集成很有用。
  *     <li>New {@link MockHandler#getInvocationContainer()} -
  *      Provides access to invocation container object which has no methods (marker interface).
  *      Container is needed to hide the internal implementation and avoid leaking it to the public API.
  *     </li>
+ *     提供对没有方法的调用容器对象的访问(标记接口)。需要容器来隐藏内部实现，并避免将其泄漏给公共API。
  *     <li>Changed {@link Stubbing} -
  *      it now extends {@link Answer} interface.
  *      It is backwards compatible because Stubbing interface is not extensible (see {@link NotExtensible}).
  *      The change should be seamless to our users.
  *     </li>
+ *     现在，它扩展了{@link Answer}接口。它是向后兼容的，因为模拟接口是不可扩展的(请参阅{@link NotExtensible)。
+ *     更改对我们的用户应该是无缝的。
  *     <li>Deprecated {@link InternalMockHandler} -
  *       In order to accommodate API changes we needed to deprecate this interface.
  *       The interface was always documented as internal, we don't have evidence it was used by the community.
@@ -1738,8 +1750,13 @@ import org.mockito.verification.VerificationWithTimeout;
  *       Public annotation that indicates to the user that she should not provide custom implementations of given type.
  *       Helps framework integrators and our users understand how to use Mockito API safely.
  *     </li>
+ *     公共注解，向用户指示她不应提供给定类型的自定义实现。
+ *     帮助框架集成商和我们的用户了解如何安全地使用Mockito API。
  * </ul>
  * Do you have feedback? Please leave comment in <a href="https://github.com/mockito/mockito/issues/1110">issue 1110</a>.
+ * 您有意见吗？请在问题1110中发表评论。
+ *
+ *
  *
  * <h3 id="42">42. <a class="meaningful_link" href="#verifiation_started_listener" name="verifiation_started_listener">
  *       New API for integrations: listening on verification start events (Since 2.11.+)</a></h3>
