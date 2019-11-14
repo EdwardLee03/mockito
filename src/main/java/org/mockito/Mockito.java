@@ -908,19 +908,28 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="19">19. <a class="meaningful_link" href="#bdd_mockito" name="bdd_mockito">Aliases for behavior driven development</a> (Since 1.8.0)</h3>
+ * <h3 id="19">19. <a class="meaningful_link" href="#bdd_mockito" name="bdd_mockito">
+ *     Aliases for behavior driven development 行为驱动开发的别名</a> (Since 1.8.0)</h3>
  *
  * Behavior Driven Development style of writing tests uses <b>//given //when //then</b> comments as fundamental parts of your test methods.
  * This is exactly how we write our tests and we warmly encourage you to do so!
+ * 行为驱动开发测试的风格使用<b>//given //when //then</b>注释，然后将注释作为测试方法的基本组成部分。
+ * 这正是我们编写测试的方式，我们热烈鼓励您这样做！
  * <p>
  * Start learning about BDD here: <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">http://en.wikipedia.org/wiki/Behavior_Driven_Development</a>
+ * 从这里开始了解BDD
  * <p>
  * The problem is that current stubbing api with canonical role of <b>when</b> word does not integrate nicely with <b>//given //when //then</b> comments.
  * It's because stubbing belongs to <b>given</b> component of the test and not to the <b>when</b> component of the test.
  * Hence {@link BDDMockito} class introduces an alias so that you stub method calls with {@link BDDMockito#given(Object)} method.
  * Now it really nicely integrates with the <b>given</b> component of a BDD style test!
+ * 问题在于，当前的模拟API具有规范的作用，当<b>when</b>字不能与<b>//given //when //then</b>注释很好地集成在一起时。
+ * 这是因为存根属于测试的给定组件，而不属于测试的<b>when</b>组件。
+ * 因此，{@link BDDMockito}类引入了一个别名，以便您可以使用{@link BDDMockito#given(Object)}方法对方法调用进行存根。
+ * 现在，它可以很好地与BDD样式测试的给定组件集成！
  * <p>
  * Here is how the test might look like:
+ *
  * <pre class="code"><code class="java">
  * import static org.mockito.BDDMockito.*;
  *
