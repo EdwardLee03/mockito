@@ -527,7 +527,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="10">10. <a class="meaningful_link" href="#stubbing_consecutive_calls" name="stubbing_consecutive_calls">Stubbing consecutive calls</a> (iterator-style stubbing)</h3>
+ * <h3 id="10">10. <a class="meaningful_link" href="#stubbing_consecutive_calls" name="stubbing_consecutive_calls">
+ *     Stubbing consecutive calls</a> (iterator-style stubbing) 存根连续地调用(迭代器式存根)</h3>
  *
  * Sometimes we need to stub with different return value/exception for the same
  * method call. Typical use case could be mocking iterators.
@@ -536,6 +537,9 @@ import org.mockito.verification.VerificationWithTimeout;
  * collections. Those offer natural ways of stubbing (e.g. using real
  * collections). In rare scenarios stubbing consecutive calls could be useful,
  * though:
+ * 有时，对于同一方法调用，需要对不同的返回值/异常进行存根。
+ * 典型的用例可能是模拟迭代器。
+ * 但是，在极少数情况下，对连续调用进行存根可能会很有用。
  * <p>
  *
  * <pre class="code"><code class="java">
@@ -554,6 +558,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * </code></pre>
  *
  * Alternative, shorter version of consecutive stubbing:
+ * 可选地，较短版本的连续存根：
  *
  * <pre class="code"><code class="java">
  * when(mock.someMethod("some arg"))
@@ -562,6 +567,7 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  * <strong>Warning</strong> : if instead of chaining {@code .thenReturn()} calls, multiple stubbing with the same matchers or arguments
  * is used, then each stubbing will override the previous one:
+ * 警告：如果使用多个具有相同匹配器或参数的存根，而不是链式的.thenReturn()调用，则每个存根将覆盖前一个存根：
  *
  * <pre class="code"><code class="java">
  * //All mock.someMethod("some arg") calls will return "two"
