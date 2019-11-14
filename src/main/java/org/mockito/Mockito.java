@@ -1444,14 +1444,19 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  * // this can also be used when defining the behaviour of a mock under different inputs
  * // in this case if the input list was fewer than 3 items the mock returns null
- * when(mock.someMethod(argThat(list -> list.size()<3))).thenReturn(null);
+ * when(mock.someMethod(argThat(list -> list.size() < 3))).thenReturn(null);
  * </code></pre>
  *
- * <h3 id="37">37. <a class="meaningful_link" href="#Java_8_Custom_Answers" name="Java_8_Custom_Answers">Java 8 Custom Answer Support</a> (Since 2.1.0)</h3>
+ *
+ *
+ * <h3 id="37">37. <a class="meaningful_link" href="#Java_8_Custom_Answers" name="Java_8_Custom_Answers">
+ *     Java 8 Custom Answer Support 自定义答案支持</a> (Since 2.1.0)</h3>
  * <p>
  * As the {@link Answer} interface has just one method it is already possible to implement it in Java 8 using
  * a lambda expression for very simple situations. The more you need to use the parameters of the method call,
  * the more you need to typecast the arguments from {@link org.mockito.invocation.InvocationOnMock}.
+ * 由于{@link Answer}接口只有一个方法，对于非常简单的情况，已经可以使用lambda表达式在Java 8中实现它。
+ * 您越需要使用方法调用的参数，就越需要从{@link org.mockito.invocation.InvocationOnMock}中转换参数。
  *
  * <p>
  * Examples:
@@ -1470,10 +1475,15 @@ import org.mockito.verification.VerificationWithTimeout;
  * For convenience it is possible to write custom answers/actions, which use the parameters to the method call,
  * as Java 8 lambdas. Even in Java 7 and lower these custom answers based on a typed interface can reduce boilerplate.
  * In particular, this approach will make it easier to test functions which use callbacks.
+ * 为方便起见，可以将自定义答案/操作编写为Java 8 lambda表达式，使用对方法调用的参数。
+ * 即使在Java 7和更低版本中，这些基于类型化接口的自定义答案也可以减少样板。
+ * 特别是，这种方法将使测试使用回调的函数更加容易。
  *
  * The methods {@link AdditionalAnswers#answer(Answer1) answer} and {@link AdditionalAnswers#answerVoid(VoidAnswer1) answerVoid}
  * can be used to create the answer. They rely on the related answer interfaces in {@link org.mockito.stubbing} that
  * support answers up to 5 parameters.
+ * {@link AdditionalAnswers#answer(Answer1) answer}和{@link AdditionalAnswers#answerVoid(VoidAnswer1) answerVoid}方法
+ * 可用于创建答案。他们依赖{@link org.mockito.stubbing}中的相关答案接口，该接口最多支持5个参数的答案。
  *
  * <p>
  * Examples:
@@ -1525,6 +1535,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *         return input1 + input2;
  *     }})).when(mock).execute(anyString(), anyString());
  * </code></pre>
+ *
+ *
  *
  * <h3 id="38">38. <a class="meaningful_link" href="#Meta_Data_And_Generics" name="Meta_Data_And_Generics">Meta data and generic type retention</a> (Since 2.1.0)</h3>
  *
