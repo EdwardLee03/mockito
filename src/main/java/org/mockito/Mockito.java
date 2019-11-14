@@ -164,11 +164,13 @@ import org.mockito.verification.VerificationWithTimeout;
  * <p>
  * For more information about inline mock making, see <a href="#39">section 39</a>.
  *
- * <h3 id="1">1. <a class="meaningful_link" href="#verification" name="verification">Let's verify some behaviour!</a></h3>
+ * <h3 id="1">1. <a class="meaningful_link" href="#verification" name="verification">
+ *     Let's verify some behaviour! 让我们验证一些行为！</a></h3>
  *
  * The following examples mock a List, because most people are familiar with the interface (such as the
  * <code>add()</code>, <code>get()</code>, <code>clear()</code> methods). <br>
  * In reality, please don't mock the List class. Use a real instance instead.
+ * 实际上，请不要模拟List类，而是使用真实的实例。
  *
  * <pre class="code"><code class="java">
  * //Let's import Mockito statically so that the code looks clearer
@@ -189,6 +191,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * <p>
  * Once created, a mock will remember all interactions. Then you can selectively
  * verify whatever interactions you are interested in.
+ * 一旦创建，模拟对象将记住所有交互。然后，您可以有选择地验证您感兴趣的任何交互。
  * </p>
  *
  *
