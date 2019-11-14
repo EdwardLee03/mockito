@@ -1176,17 +1176,24 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="27">27. <a class="meaningful_link" href="#delegating_call_to_real_instance" name="delegating_call_to_real_instance">Delegate calls to real instance</a> (Since 1.9.5)</h3>
+ * <h3 id="27">27. <a class="meaningful_link" href="#delegating_call_to_real_instance" name="delegating_call_to_real_instance">
+ *     Delegate calls to real instance 将调用委托给真实实例</a> (Since 1.9.5)</h3>
  *
  * <p>Useful for spies or partial mocks of objects <strong>that are difficult to mock or spy</strong> using the usual spy API.
  * Since Mockito 1.10.11, the delegate may or may not be of the same type as the mock.
  * If the type is different, a matching method needs to be found on delegate type otherwise an exception is thrown.
+ * 对于无法使用常规侦察API进行模拟或侦察的对象的侦察或部分模拟很有用。
+ * 从1.10.11版本开始，委托的类型可以与模拟的类型相同或不相同。
+ * 如果类型不同，则需要在委托类型上找到匹配的方法，否则将引发异常。
  *
  * Possible use cases for this feature:
  * <ul>
  *     <li>Final classes but with an interface</li>
+ *     具有接口的最终类型
  *     <li>Already custom proxied object</li>
+ *     已经自定义的代理对象
  *     <li>Special objects with a finalize method, i.e. to avoid executing it 2 times</li>
+ *     具有finalize方法的特殊对象
  * </ul>
  *
  * <p>The difference with the regular spy:
@@ -1197,6 +1204,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *     If you call a method on a regular spy and it internally calls other methods on this spy, those calls are remembered
  *     for verifications, and they can be effectively stubbed.
  *   </li>
+ *   常规侦察包含侦察实例的所有状态，并且对侦察对象调用方法。
+ *   侦察实例仅在模拟创建时用于从中复制状态。
  *   <li>
  *     The mock that delegates simply delegates all methods to the delegate.
  *     The delegate is used all the time as methods are delegated onto it.
