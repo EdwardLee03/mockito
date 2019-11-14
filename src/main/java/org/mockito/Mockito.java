@@ -951,11 +951,14 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="20">20. <a class="meaningful_link" href="#serializable_mocks" name="serializable_mocks">Serializable mocks</a> (Since 1.8.1)</h3>
+ * <h3 id="20">20. <a class="meaningful_link" href="#serializable_mocks" name="serializable_mocks">
+ *     Serializable mocks 可序列化的模拟</a> (Since 1.8.1)</h3>
  *
  * Mocks can be made serializable. With this feature you can use a mock in a place that requires dependencies to be serializable.
+ * 模拟对象可以序列化。使用此功能，可以在需要依赖项可序列化的地方使用模拟。
  * <p>
  * WARNING: This should be rarely used in unit testing.
+ * 警告：这在单元测试中应该很少使用。
  * <p>
  * The behaviour was implemented for a specific use case of a BDD spec that had an unreliable external dependency.  This
  * was in a web environment and the objects from the external dependency were being serialized to pass between layers.
