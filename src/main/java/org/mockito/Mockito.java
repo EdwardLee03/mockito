@@ -1643,15 +1643,21 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  * <h3 id="40">40. <a class="meaningful_link" href="#strict_mockito" name="strict_mockito">
- *     Improved productivity and cleaner tests with "stricter" Mockito</a> (Since 2.+)</h3>
+ *     Improved productivity and cleaner tests with "stricter" Mockito 使用"限制器"提高生产率和更清洁的测试</a> (Since 2.+)</h3>
  *
  * To quickly find out how "stricter" Mockito can make you more productive and get your tests cleaner, see:
+ * 要快速了解"限制器"，Mockito如何使您生产率更高并使测试更清洁，请参阅：
  * <ul>
  *     <li>Strict stubbing with JUnit Rules - {@link MockitoRule#strictness(Strictness)} with {@link Strictness#STRICT_STUBS}</li>
+ *     使用JUnit规则进行严格的存根
  *     <li>Strict stubbing with JUnit Runner - {@link MockitoJUnitRunner.StrictStubs}</li>
+ *     使用JUnit运行器进行严格的存根
  *     <li>Strict stubbing if you cannot use runner/rule (like TestNG) - {@link MockitoSession}</li>
+ *     如果无法使用运行器/规则，则进行严格的存根
  *     <li>Unnecessary stubbing detection with {@link MockitoJUnitRunner}</li>
+ *     使用{@link MockitoJUnitRunner}进行不必要的存根检测
  *     <li>Stubbing argument mismatch warnings, documented in {@link MockitoHint}</li>
+ *     存根参数不匹配警告
  * </ul>
  *
  * Mockito is a "loose" mocking framework by default.
@@ -1659,6 +1665,10 @@ import org.mockito.verification.VerificationWithTimeout;
  * This is intentional and it improves the quality of tests by forcing users to be explicit about what they want to stub / verify.
  * It is also very intuitive, easy to use and blends nicely with "given", "when", "then" template of clean test code.
  * This is also different from the classic mocking frameworks of the past, they were "strict" by default.
+ * 默认情况下，Mockito是一个"松散"的模拟框架。无需事先设定任何期望就可以与人互动。
+ * 这是有意的，它通过强制用户明确表示要存根/验证的内容，从而提高了测试质量。
+ * 它也非常直观，易于使用，并与干净的测试代码的"给定/given"，"何时/when"，"然后/then"模板很好地融合在一起。
+ * 这也与过去的经典模拟框架不同，默认情况下它们是"严格的"。
  * <p>
  * Being "loose" by default makes Mockito tests harder to debug at times.
  * There are scenarios where misconfigured stubbing (like using a wrong argument) forces the user to run the test with a debugger.
@@ -1666,9 +1676,17 @@ import org.mockito.verification.VerificationWithTimeout;
  * Starting with version 2.1 Mockito has been getting new features that nudge the framework towards "strictness".
  * We want Mockito to offer fantastic debuggability while not losing its core mocking style, optimized for
  * intuitiveness, explicitness and clean test code.
+ * 默认情况下，处于"宽松"状态会使Mockito测试时难以调试。
+ * 在某些情况下，配置错误的存根(如使用错误的参数)会迫使用户使用调试器进行测试。
+ * 理想情况下，测试失败是立即显而易见的，不需要调试器来确定根本原因。
+ * 从2.1版本开始，Mockito已获得使框架趋向"限制"的新功能。
+ * 我们希望Mockito提供出色的可调试性，同时又不失其核心的模拟风格，并针对直观性，明确性和简洁的测试代码进行优化。
  * <p>
  * Help Mockito! Try the new features, give us feedback, join the discussion about Mockito strictness at GitHub
  * <a href="https://github.com/mockito/mockito/issues/769">issue 769</a>.
+ * 帮助Mockito！尝试新功能，给我们反馈，并加入GitHub的第769期有关Mockito严格性的讨论。
+ *
+ *
  *
  * <h3 id="41">41. <a class="meaningful_link" href="#framework_integrations_api" name="framework_integrations_api">
  *      Advanced public API for framework integrations (Since 2.10.+)</a></h3>
