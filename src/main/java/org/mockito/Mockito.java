@@ -1378,16 +1378,21 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="34">34. <a class="meaningful_link" href="#plugin_switch" name="plugin_switch">Switch <em>on</em> or <em>off</em> plugins (Since 1.10.15)</a></h3>
+ * <h3 id="34">34. <a class="meaningful_link" href="#plugin_switch" name="plugin_switch">
+ *     Switch <em>on</em> or <em>off</em> plugins 开启或关闭插件 (Since 1.10.15)</a></h3>
  *
  * An incubating feature made it's way in mockito that will allow to toggle a mockito-plugin.
  *
  * More information here {@link org.mockito.plugins.PluginSwitch}.
+ * 孵化功能使它成为了模仿者，可以切换模仿者插件。
+ * 更多信息请参见{@link org.mockito.plugins.PluginSwitch}。
  *
  *
- * <h3 id="35">35. <a class="meaningful_link" href="#Custom_verification_failure_message" name="Custom_verification_failure_message">Custom verification failure message</a> (Since 2.1.0)</h3>
+ * <h3 id="35">35. <a class="meaningful_link" href="#Custom_verification_failure_message" name="Custom_verification_failure_message">
+ *     Custom verification failure message 自定义验证失败的消息</a> (Since 2.1.0)</h3>
  * <p>
  * Allows specifying a custom message to be printed if verification fails.
+ * 如果验证失败，则允许指定要打印的自定义消息。
  * <p>
  * Examples:
  * <p>
@@ -1399,6 +1404,8 @@ import org.mockito.verification.VerificationWithTimeout;
  * // will work with any verification mode
  * verify(mock, times(2).description("someMethod should be called twice")).someMethod();
  * </code></pre>
+ *
+ *
  *
  * <h3 id="36">36. <a class="meaningful_link" href="#Java_8_Lambda_Matching" name="Java_8_Lambda_Matching">Java 8 Lambda Matcher Support</a> (Since 2.1.0)</h3>
  * <p>
