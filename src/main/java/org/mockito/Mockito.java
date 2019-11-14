@@ -1567,7 +1567,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="39">39. <a class="meaningful_link" href="#Mocking_Final" name="Mocking_Final">Mocking final types, enums and final methods</a> (Since 2.1.0)</h3>
+ * <h3 id="39">39. <a class="meaningful_link" href="#Mocking_Final" name="Mocking_Final">
+ *     Mocking final types, enums and final methods 模拟最终类型，枚举和最终方法</a> (Since 2.1.0)</h3>
  *
  * Mockito now offers an {@link Incubating}, optional support for mocking final classes and methods.
  * This is a fantastic improvement that demonstrates Mockito's everlasting quest for improving testing experience.
@@ -1575,36 +1576,54 @@ import org.mockito.verification.VerificationWithTimeout;
  * Previously they were considered <em>unmockable</em>, preventing the user from mocking.
  * We already started discussing how to make this feature enabled by default.
  * Currently, the feature is still optional as we wait for more feedback from the community.
+ * Mockito现在为模拟最终类和方法提供了{@link Incubating}可选支持。
+ * 这是一个了不起的改进，表明了Mockito不断追求改善测试体验的追求。
+ * 我们的目标是使Mockito与最终的类和方法"兼容"。以前，它们被认为是不可模仿的，可防止用户嘲笑。
+ * 我们已经开始讨论如何默认启用此功能。目前，该功能仍然是可选功能，因为我们等待社区提供更多反馈。
  *
  * <p>
  * This alternative mock maker which uses
  * a combination of both Java instrumentation API and sub-classing rather than creating a new class to represent
  * a mock. This way, it becomes possible to mock final types and methods.
+ * 这种替代的模拟制作器，它结合使用Java工具API和子类，而不是创建一个新类来表示模拟对象。
+ * 这样，就有可能模拟最终类型和方法。
  *
  * <p>
  * This mock maker is <strong>turned off by default</strong> because it is based on completely different mocking mechanism
  * that requires more feedback from the community. It can be activated explicitly by the mockito extension mechanism,
  * just create in the classpath a file <code>/mockito-extensions/org.mockito.plugins.MockMaker</code>
  * containing the value <code>mock-maker-inline</code>.
+ * 默认情况下，这个模拟生成器处于关闭状态，因为它基于完全不同的模拟机制，需要社区提供更多反馈。
+ * 可以通过mockito扩展机制显式激活它，只需在类路径中创建一个文件 /mockito-extensions/org.mockito.plugins.MockMaker。
  *
  * <p>
  * As a convenience, the Mockito team provides an artifact where this mock maker is preconfigured. Instead of using the
  * <i>mockito-core</i> artifact, include the <i>mockito-inline</i> artifact in your project. Note that this artifact is
  * likely to be discontinued once mocking of final classes and methods gets integrated into the default mock maker.
+ * 为方便起见，Mockito团队提供了一个工件，在这个工件中已预先配置了这个模拟设备。
+ * 不要在您的项目中包含模仿嵌入式内在工件，而不必使用模仿核心工件。
+ * 请注意，一旦将最终类型和方法的模拟集成到默认的模拟生成器中，则这个工件可能会中断。
  *
  * <p>
  * Some noteworthy notes about this mock maker:
+ * 关于这个模拟制作器的一些值得注意的事项：
  * <ul>
- *     <li>Mocking final types and enums is incompatible with mock settings like :
+ *     <li>Mocking final types and enums is incompatible with mock settings like:
+ *     模拟最终类型和枚举与模拟设置不兼容。
  *     <ul>
  *         <li>explicitly serialization support <code>withSettings().serializable()</code></li>
+ *         明确的序列化支持 withSettings().serializable()
  *         <li>extra-interfaces <code>withSettings().extraInterfaces()</code></li>
+ *         额外接口 withSettings().extraInterfaces()
  *     </ul>
  *     </li>
  *     <li>Some methods cannot be mocked
+ *     某些方法无法模拟
  *         <ul>
  *              <li>Package-visible methods of <code>java.*</code></li>
+ *              包可见的方法
  *              <li><code>native</code> methods</li>
+ *              本机方法
  *         </ul>
  *     </li>
  *     <li>This mock maker has been designed around Java Agent runtime attachment ; this require a compatible JVM,
@@ -1612,11 +1631,16 @@ import org.mockito.verification.VerificationWithTimeout;
  *     manually add the <a href="http://bytebuddy.net">Byte Buddy Java agent jar</a> using the <code>-javaagent</code>
  *     parameter upon starting the JVM.
  *     </li>
+ *     这个模拟制作器围绕Java代理运行时附加设计；这需要兼容的JVM，它是JDK的一部分。
+ *     但是，在Java 9之前的非JDK VM上运行时，可以在启动JVM时使用-javaagent参数手动添加到Byte Buddy Java代理包。
  * </ul>
  *
  * <p>
  * If you are interested in more details of this feature please read the javadoc of
  * <code>org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker</code>
+ * 如果您对这个功能的更多细节感兴趣，请阅读InlineByteBuddyMockMaker的文档。
+ *
+ *
  *
  * <h3 id="40">40. <a class="meaningful_link" href="#strict_mockito" name="strict_mockito">
  *     Improved productivity and cleaner tests with "stricter" Mockito</a> (Since 2.+)</h3>
