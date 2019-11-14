@@ -1788,32 +1788,45 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  * <h3 id="43">43. <a class="meaningful_link" href="#mockito_session_testing_frameworks" name="mockito_session_testing_frameworks">
- *       New API for integrations: <code>MockitoSession</code> is usable by testing frameworks (Since 2.15.+)</a></h3>
+ *       New API for integrations: <code>MockitoSession</code> is usable by testing frameworks
+ *       集成的新API：会话可通过测试框架使用 (Since 2.15.+)</a></h3>
  *
  * <p>{@link MockitoSessionBuilder} and {@link MockitoSession} were enhanced to enable reuse by testing framework
  * integrations (e.g. {@link MockitoRule} for JUnit):</p>
+ * {@link MockitoSessionBuilder}和{@link MockitoSession}进行了增强，可以通过测试框架集成来实现重用：
  * <ul>
  *     <li>{@link MockitoSessionBuilder#initMocks(Object...)} allows to pass in multiple test class instances for
  *      initialization of fields annotated with Mockito annotations like {@link org.mockito.Mock}.
  *      This method is useful for advanced framework integrations (e.g. JUnit Jupiter), when a test uses multiple,
  *      e.g. nested, test class instances.
  *     </li>
+ *     {@link MockitoSessionBuilder#initMocks(Object...)}允许传入多个测试类实例，以初始化使用Mockito注解注释的字段。
+ *     当测试使用多个测试时，这个方法对于高级框架集成很有用。
  *     <li>{@link MockitoSessionBuilder#name(String)} allows to pass a name from the testing framework to the
  *      {@link MockitoSession} that will be used for printing warnings when {@link Strictness#WARN} is used.
  *     </li>
+ *     {@link MockitoSessionBuilder#name(String)}允许将名称从测试框架传递到{@link MockitoSession}，
+ *     这个名称将在使用{@link Strictness#WARN}时用于打印警告。
  *     <li>{@link MockitoSessionBuilder#logger(MockitoSessionLogger)} makes it possible to customize the logger used
  *      for hints/warnings produced when finishing mocking (useful for testing and to connect reporting capabilities
  *      provided by testing frameworks such as JUnit Jupiter).
  *     </li>
+ *     {@link MockitoSessionBuilder#logger(MockitoSessionLogger)}使得自定义记录器成为可能，
+ *     这个记录器用于在完成模拟时生成的提示/警告(用于测试并连接由测试框架提供的报告功能)。
  *     <li>{@link MockitoSession#setStrictness(Strictness)} allows to change the strictness of a {@link MockitoSession}
  *      for one-off scenarios, e.g. it enables configuring a default strictness for all tests in a class but makes it
  *      possible to change the strictness for a single or a few tests.
  *     </li>
+ *     {@link MockitoSession#setStrictness(Strictness)}允许更改一次性场景的{@link MockitoSession}的严格性。
  *     <li>{@link MockitoSession#finishMocking(Throwable)} was added to avoid confusion that may arise because
  *      there are multiple competing failures. It will disable certain checks when the supplied <em>failure</em>
  *      is not {@code null}.
  *     </li>
+ *     添加{@link MockitoSession#finishMocking(Throwable)}以避免由于存在多个竞争失败而引起的混乱。
+ *     当提供的故障不为null时，它将禁用某些检查。
  * </ul>
+ *
+ *
  *
  * <h3 id="44">44. <a class="meaningful_link" href="#mockito_instantiator_provider_deprecation" name="mockito_instantiator_provider_deprecation">
  *       Deprecated <code>org.mockito.plugins.InstantiatorProvider</code> as it was leaking internal API. it was
