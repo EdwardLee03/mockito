@@ -323,7 +323,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="4">4. <a class="meaningful_link" href="#exact_verification" name="exact_verification">Verifying exact number of invocations</a> /
+ * <h3 id="4">4. <a class="meaningful_link" href="#exact_verification" name="exact_verification">
+ *     Verifying exact number of invocations 验证确切的调用次数</a> /
  * <a class="meaningful_link" href="#at_least_verification" name="at_least_verification">at least x</a> / never</h3>
  *
  * <pre class="code"><code class="java">
@@ -359,6 +360,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * <p>
  * <b>times(1) is the default.</b> Therefore using times(1) explicitly can be
  * omitted.
+ * 默认是times(1)。因此，显式地使用times(1)可以省略。
  *
  *
  *
