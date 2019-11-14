@@ -427,7 +427,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="7">7. <a class="meaningful_link" href="#never_verification" name="never_verification">Making sure interaction(s) never happened on mock</a></h3>
+ * <h3 id="7">7. <a class="meaningful_link" href="#never_verification" name="never_verification">
+ *     Making sure interaction(s) never happened on mock 确保模拟中从未发生过互动</a></h3>
  *
  * <pre class="code"><code class="java">
  * //using mocks - only mockOne is interacted
@@ -440,7 +441,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * verify(mockOne, never()).add("two");
  *
  * //verify that other mocks were not interacted
- * verifyZeroInteractions(mockTwo, mockThree);
+ * verifyNoInteractions(mockTwo, mockThree);
  *
  * </code></pre>
  *
