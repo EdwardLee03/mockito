@@ -1322,10 +1322,12 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="32">32. <a class="meaningful_link" href="#better_generic_support_with_deep_stubs" name="better_generic_support_with_deep_stubs">Better generic support with deep stubs (Since 1.10.0)</a></h3>
+ * <h3 id="32">32. <a class="meaningful_link" href="#better_generic_support_with_deep_stubs" name="better_generic_support_with_deep_stubs">
+ *     Better generic support with deep stubs 带有深层存根的更好的通用支持 (Since 1.10.0)</a></h3>
  *
  * Deep stubbing has been improved to find generic information if available in the class.
  * That means that classes like this can be used without having to mock the behavior.
+ * 深度桩技术已得到改进，可以在该类中找到通用信息。这意味着可以使用这样的类而不必模拟行为。
  *
  * <pre class="code"><code class="java">
  * class Lines extends List&lt;Line&gt; {
@@ -1339,6 +1341,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * </code></pre>
  *
  * Please note that in most scenarios a mock returning a mock is wrong.
+ * 请注意，在大多数情况下，将模拟返回模拟对象是错误的。
  *
  *
  *
