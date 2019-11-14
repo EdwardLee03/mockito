@@ -1239,9 +1239,11 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="29">29. <a class="meaningful_link" href="#BDD_behavior_verification" name="BDD_behavior_verification">BDD style verification</a> (Since 1.10.0)</h3>
+ * <h3 id="29">29. <a class="meaningful_link" href="#BDD_behavior_verification" name="BDD_behavior_verification">
+ *     BDD style verification BDD风格验证</a> (Since 1.10.0)</h3>
  *
  * Enables Behavior Driven Development (BDD) style verification by starting verification with the BDD <b>then</b> keyword.
+ * 通过使用BDD <b>then</b>关键字开始验证来启用行为驱动开发样式验证。
  *
  * <pre class="code"><code class="java">
  * given(dog.bark()).willReturn(2);
@@ -1253,6 +1255,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * </code></pre>
  *
  * For more information and an example see {@link BDDMockito#then(Object)}
+ * 有关更多信息和示例代码，请参见{@link BDDMockito#then(Object)}。
  *
  *
  *
