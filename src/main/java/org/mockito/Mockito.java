@@ -70,7 +70,7 @@ import org.mockito.verification.VerificationWithTimeout;
  *      <a href="#10">10. Stubbing consecutive calls (iterator-style stubbing) 存根连续地调用(迭代器式存根) </a><br/>
  *      <a href="#11">11. Stubbing with callbacks 带回调的存根 </a><br/>
  *      <a href="#12">12. <code>doReturn()</code>|<code>doThrow()</code>|<code>doAnswer()</code>|<code>doNothing()</code>|<code>doCallRealMethod()</code> family of methods doXxx方法家族 </a><br/>
- *      <a href="#13">13. Spying on real objects 监视真实的对象 </a><br/>
+ *      <a href="#13">13. Spying on real objects 侦察真实的对象 </a><br/>
  *      <a href="#14">14. Changing default return values of unstubbed invocations 更改未存根调用的默认返回值 (Since 1.7) </a><br/>
  *      <a href="#15">15. Capturing arguments for further assertions 为进一步断言捕获参数 (Since 1.8.0) </a><br/>
  *      <a href="#16">16. Real partial mocks 真正的部分模拟 (Since 1.8.0) </a><br/>
@@ -663,12 +663,16 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="13">13. <a class="meaningful_link" href="#spy" name="spy">Spying on real objects</a></h3>
+ * <h3 id="13">13. <a class="meaningful_link" href="#spy" name="spy">
+ *     Spying on real objects 侦察真实的对象</a></h3>
  *
  * You can create spies of real objects. When you use the spy then the <b>real</b> methods are called
  * (unless a method was stubbed).
+ * 您可以创建真实对象的侦察。
+ * 当您使用侦察时，将调用实际方法(除非对方法进行了存根)。
  * <p>
  * Real spies should be used <b>carefully and occasionally</b>, for example when dealing with legacy code.
+ * 真正的侦察应该小心谨慎地使用，例如在处理遗留代码时。
  *
  * <p>
  * Spying on real objects can be associated with "partial mocking" concept.
@@ -676,6 +680,9 @@ import org.mockito.verification.VerificationWithTimeout;
  * The reason was we thought partial mock is a code smell.
  * At some point we found legitimate use cases for partial mocks
  * (3rd party interfaces, interim refactoring of legacy code).
+ * 侦察真实对象可以与"部分模拟"概念相关联。
+ * 在1.8版本之前，Mockito侦察并不是真正的部分模拟，原因是我们认为部分模拟是一种代码坏味道。
+ * 在某个时候，我们发现了部分模拟的合法用例(第三方接口，对遗留代码的临时重构)。
  * <p>
  *
  * <pre class="code"><code class="java">
@@ -700,11 +707,13 @@ import org.mockito.verification.VerificationWithTimeout;
  *   verify(spy).add("two");
  * </code></pre>
  *
- * <h4>Important gotcha on spying real objects!</h4>
+ * <h4>Important gotcha on spying real objects! 从事侦察活动的重要陷阱！</h4>
  * <ol>
  * <li>Sometimes it's impossible or impractical to use {@link Mockito#when(Object)} for stubbing spies.
  * Therefore when using spies please consider <code>doReturn</code>|<code>Answer</code>|<code>Throw()</code> family of
  * methods for stubbing. Example:
+ * 有时，使用{@link Mockito#when(Object)}来存根侦察是不可能或不切实际的。
+ * 因此，在使用侦察对象时，请考虑使用doReturn|Answer|Throw()系列方法进行存根。
  *
  * <pre class="code"><code class="java">
  *   List list = new LinkedList();
@@ -724,11 +733,16 @@ import org.mockito.verification.VerificationWithTimeout;
  * The corollary is that when an <b>*unstubbed*</b> method is called <b>*on the spy*</b> but <b>*not on the real instance*</b>,
  * you won't see any effects on the real instance.
  * </li>
+ * Mockito不会将调用委派给传递的真实实例，而实际上是创建它的副本。
+ * 因此，如果保留真实实例并与之交互，请不要期望侦察对象知道这些交互及其对真实实例状态的影响。
+ * 必然的结果是，当在侦察对象上调用未使用的方法，而在真实实例上却未调用方法时，您将看不到任何对真实实例的影响。
  *
  * <li>Watch out for final methods.
  * Mockito doesn't mock final methods so the bottom line is: when you spy on real objects + you try to stub a final method = trouble.
  * Also you won't be able to verify those method as well.
  * </li>
+ * 注意最终方法，Mockito不模拟最终方法，因此最重要的是：当您侦察真实对象 + 尝试对最终方法进行存根 = 麻烦。
+ * 另外，您也将无法验证这些方法。
  * </ol>
  *
  *
