@@ -1143,11 +1143,14 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="26">26. <a class="meaningful_link" href="#mocking_details" name="mocking_details">Mocking details</a> (Improved in 2.2.x)</h3>
+ * <h3 id="26">26. <a class="meaningful_link" href="#mocking_details" name="mocking_details">
+ *     Mocking details 模拟细节</a> (Improved in 2.2.x)</h3>
  * <p>
  *
  * Mockito offers API to inspect the details of a mock object.
  * This API is useful for advanced users and mocking framework integrators.
+ * Mockito提供API来检查模拟对象的详细信息。
+ * 这个API对高级用户和模拟框架集成商很有用。
  *
  * <pre class="code"><code class="java">
  *   //To identify whether a particular object is a mock or a spy:
@@ -1169,6 +1172,9 @@ import org.mockito.verification.VerificationWithTimeout;
  * </code></pre>
  *
  * For more information see javadoc for {@link MockingDetails}.
+ * 相关更多信息，请参见{@link MockingDetails}中的文档。
+ *
+ *
  *
  * <h3 id="27">27. <a class="meaningful_link" href="#delegating_call_to_real_instance" name="delegating_call_to_real_instance">Delegate calls to real instance</a> (Since 1.9.5)</h3>
  *
