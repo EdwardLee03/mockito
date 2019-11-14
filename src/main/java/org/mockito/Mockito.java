@@ -987,27 +987,37 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  * <h3 id="21">21. New annotations: <a class="meaningful_link" href="#captor_annotation" name="captor_annotation"><code>&#064;Captor</code></a>,
  * <a class="meaningful_link" href="#spy_annotation" name="spy_annotation"><code>&#064;Spy</code></a>,
- * <a class="meaningful_link" href="#injectmocks_annotation" name="injectmocks_annotation"><code>&#064;InjectMocks</code></a> (Since 1.8.3)</h3>
+ * <a class="meaningful_link" href="#injectmocks_annotation" name="injectmocks_annotation"><code>&#064;InjectMocks</code></a>
+ * 新的注解：@Captor，@Spy，@InjectMocks (Since 1.8.3)</h3>
  *
  * <p>
  * Release 1.8.3 brings new annotations that may be helpful on occasion:
+ * 1.8.3版本引入了新的注解，有时可能会有所帮助：
  *
  * <ul>
  * <li>&#064;{@link Captor} simplifies creation of {@link ArgumentCaptor}
  * - useful when the argument to capture is a nasty generic class and you want to avoid compiler warnings
+ * @{@link Captor}简化了{@link ArgumentCaptor}的创建，当要捕获的参数是一个讨厌的泛型类并且您想要避免编译器警告时很有用
  * <li>&#064;{@link Spy} - you can use it instead {@link Mockito#spy(Object)}.
+ * @{@link Spy}，您可以使用它代替{@link Mockito#spy(Object)}。
  * <li>&#064;{@link InjectMocks} - injects mock or spy fields into tested object automatically.
+ * @{@link InjectMocks}将模拟或侦察字段自动注入到测试对象中。
  * </ul>
  *
  * <p>
  * Note that &#064;{@link InjectMocks} can also be used in combination with the &#064;{@link Spy} annotation, it means
  * that Mockito will inject mocks into the partial mock under test. This complexity is another good reason why you
  * should only use partial mocks as a last resort. See point 16 about partial mocks.
+ * 请注意，@{@link InjectMocks}也可以与@{@link Spy}注解结合使用，
+ * 这意味着Mockito会将模拟对象注入到测试的部分模拟对象中。
+ * 这种复杂性是为什么只应将部分模拟作为最后的选择的另一个很好的理由。
  *
  * <p>
  * All new annotations are <b>*only*</b> processed on {@link MockitoAnnotations#initMocks(Object)}.
  * Just like for &#064;{@link Mock} annotation you can use the built-in runner: {@link MockitoJUnitRunner} or rule:
  * {@link MockitoRule}.
+ * 所有新的注解仅在{@link MockitoAnnotations#initMocks(Object)}上处理。
+ * 就像@{@link Mock}注解一样，您可以使用内置的运行器{@link MockitoJUnitRunner}或规则{@link MockitoRule}。
  * <p>
  *
  *
