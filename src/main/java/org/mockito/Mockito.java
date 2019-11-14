@@ -1023,15 +1023,20 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="22">22. <a class="meaningful_link" href="#verification_timeout" name="verification_timeout">Verification with timeout</a> (Since 1.8.5)</h3>
+ * <h3 id="22">22. <a class="meaningful_link" href="#verification_timeout" name="verification_timeout">
+ *     Verification with timeout 超时验证</a> (Since 1.8.5)</h3>
  * <p>
  * Allows verifying with timeout. It causes a verify to wait for a specified period of time for a desired
  * interaction rather than fails immediately if had not already happened. May be useful for testing in concurrent
  * conditions.
+ * 允许验证超时。它使验证等待指定的时间段以进行所需的交互，而不是如果尚未发生则立即失败。
+ * 在并发条件下进行测试可能有用。
  * <p>
  * This feature should be used rarely - figure out a better way of testing your multi-threaded system.
+ * 很少使用此功能，找出测试多线程系统的更好方法。
  * <p>
  * Not yet implemented to work with InOrder verification.
+ * 尚未实现与InOrder验证一起使用。
  * <p>
  * Examples:
  * <p>
