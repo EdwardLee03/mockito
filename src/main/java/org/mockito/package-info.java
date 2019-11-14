@@ -1,10 +1,7 @@
-/*
- * Copyright (c) 2007 Mockito contributors
- * This program is made available under the terms of the MIT License.
- */
 
 /**
  * Mockito is a mock library for java - see {@link org.mockito.Mockito} class for usage.
+ * Mockito是java的模拟库——有关用法请参见{@link org.mockito.Mockito}类。
  *
  * @see org.mockito.Mockito
  */

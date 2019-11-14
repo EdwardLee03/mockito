@@ -1,7 +1,4 @@
-/*
- * Copyright (c) 2007 Mockito contributors
- * This program is made available under the terms of the MIT License.
- */
+
 package org.mockito;
 
 import org.mockito.exceptions.misusing.PotentialStubbingProblem;
@@ -44,6 +41,7 @@ import org.mockito.verification.VerificationWithTimeout;
 /**
  * <p align="left"><img src="logo.png" srcset="logo@2x.png 2x" alt="Mockito logo"/></p>
  * The Mockito library enables mock creation, verification and stubbing.
+ * 模拟创建，验证和存根。
  *
  * <p>
  * This javadoc content is also available on the <a href="http://mockito.org">http://mockito.org</a> web page.
@@ -51,60 +49,62 @@ import org.mockito.verification.VerificationWithTimeout;
  * It allows access to documentation straight from the IDE even if you work offline.
  * It motivates Mockito developers to keep documentation up-to-date with the code that they write,
  * every day, with every commit.
+ * 所有文档都保存在javadocs中，因为它可以确保web内容和源代码之间的一致性。
+ * 它激励Mockito开发人员使他们每天每次提交的代码都保持最新的文档。
  *
  * <h1>Contents</h1>
  *
  * <b>
- *      <a href="#0">0. Migrating to Mockito 2</a><br/>
+ *      <a href="#0">0. Migrating to Mockito 2 迁移到Mockito 2 </a><br/>
  *      <a href="#0.1">0.1 Mockito Android support</a></br/>
  *      <a href="#0.2">0.2 Configuration-free inline mock making</a></br/>
- *      <a href="#1">1. Let's verify some behaviour! </a><br/>
- *      <a href="#2">2. How about some stubbing? </a><br/>
- *      <a href="#3">3. Argument matchers </a><br/>
- *      <a href="#4">4. Verifying exact number of invocations / at least once / never </a><br/>
- *      <a href="#5">5. Stubbing void methods with exceptions </a><br/>
- *      <a href="#6">6. Verification in order </a><br/>
- *      <a href="#7">7. Making sure interaction(s) never happened on mock </a><br/>
- *      <a href="#8">8. Finding redundant invocations </a><br/>
- *      <a href="#9">9. Shorthand for mocks creation - <code>&#064;Mock</code> annotation </a><br/>
- *      <a href="#10">10. Stubbing consecutive calls (iterator-style stubbing) </a><br/>
- *      <a href="#11">11. Stubbing with callbacks </a><br/>
- *      <a href="#12">12. <code>doReturn()</code>|<code>doThrow()</code>|<code>doAnswer()</code>|<code>doNothing()</code>|<code>doCallRealMethod()</code> family of methods</a><br/>
- *      <a href="#13">13. Spying on real objects </a><br/>
- *      <a href="#14">14. Changing default return values of unstubbed invocations (Since 1.7) </a><br/>
- *      <a href="#15">15. Capturing arguments for further assertions (Since 1.8.0) </a><br/>
- *      <a href="#16">16. Real partial mocks (Since 1.8.0) </a><br/>
- *      <a href="#17">17. Resetting mocks (Since 1.8.0) </a><br/>
- *      <a href="#18">18. Troubleshooting & validating framework usage (Since 1.8.0) </a><br/>
- *      <a href="#19">19. Aliases for behavior driven development (Since 1.8.0) </a><br/>
- *      <a href="#20">20. Serializable mocks (Since 1.8.1) </a><br/>
- *      <a href="#21">21. New annotations: <code>&#064;Captor</code>, <code>&#064;Spy</code>, <code>&#064;InjectMocks</code> (Since 1.8.3) </a><br/>
- *      <a href="#22">22. Verification with timeout (Since 1.8.5) </a><br/>
- *      <a href="#23">23. Automatic instantiation of <code>&#064;Spies</code>, <code>&#064;InjectMocks</code> and constructor injection goodness (Since 1.9.0)</a><br/>
- *      <a href="#24">24. One-liner stubs (Since 1.9.0)</a><br/>
- *      <a href="#25">25. Verification ignoring stubs (Since 1.9.0)</a><br/>
- *      <a href="#26">26. Mocking details (Improved in 2.2.x)</a><br/>
- *      <a href="#27">27. Delegate calls to real instance (Since 1.9.5)</a><br/>
- *      <a href="#28">28. <code>MockMaker</code> API (Since 1.9.5)</a><br/>
- *      <a href="#29">29. BDD style verification (Since 1.10.0)</a><br/>
- *      <a href="#30">30. Spying or mocking abstract classes (Since 1.10.12, further enhanced in 2.7.13 and 2.7.14)</a><br/>
- *      <a href="#31">31. Mockito mocks can be <em>serialized</em> / <em>deserialized</em> across classloaders (Since 1.10.0)</a></h3><br/>
- *      <a href="#32">32. Better generic support with deep stubs (Since 1.10.0)</a></h3><br/>
- *      <a href="#33">33. Mockito JUnit rule (Since 1.10.17)</a><br/>
- *      <a href="#34">34. Switch <em>on</em> or <em>off</em> plugins (Since 1.10.15)</a><br/>
- *      <a href="#35">35. Custom verification failure message (Since 2.1.0)</a><br/>
- *      <a href="#36">36. Java 8 Lambda Matcher Support (Since 2.1.0)</a><br/>
- *      <a href="#37">37. Java 8 Custom Answer Support (Since 2.1.0)</a><br/>
- *      <a href="#38">38. Meta data and generic type retention (Since 2.1.0)</a><br/>
- *      <a href="#39">39. Mocking final types, enums and final methods (Since 2.1.0)</a><br/>
- *      <a href="#40">40. Improved productivity and cleaner tests with "stricter" Mockito (Since 2.+)</a><br/>
- *      <a href="#41">41. Advanced public API for framework integrations (Since 2.10.+)</a><br/>
- *      <a href="#42">42. New API for integrations: listening on verification start events (Since 2.11.+)</a><br/>
- *      <a href="#43">43. New API for integrations: <code>MockitoSession</code> is usable by testing frameworks (Since 2.15.+)</a><br/>
- *      <a href="#44">44. Deprecated <code>org.mockito.plugins.InstantiatorProvider</code> as it was leaking internal API. it was replaced by <code>org.mockito.plugins.InstantiatorProvider2 (Since 2.15.4)</code></a><br/>
- *      <a href="#45">45. New JUnit Jupiter (JUnit5+) extension</a><br/>
- *      <a href="#46">46. New <code>Mockito.lenient()</code> and <code>MockSettings.lenient()</code> methods (Since 2.20.0)</a><br/>
- *      <a href="#47">47. New API for clearing mock state in inline mocking (Since 2.25.0)</a><br/>
+ *      <a href="#1">1. Let's verify some behaviour! 让我们验证一些行为！ </a><br/>
+ *      <a href="#2">2. How about some stubbing? 存根怎么样？ </a><br/>
+ *      <a href="#3">3. Argument matchers 参数匹配器 </a><br/>
+ *      <a href="#4">4. Verifying exact number of invocations / at least once / never 验证确切的调用次数 </a><br/>
+ *      <a href="#5">5. Stubbing void methods with exceptions 存根带异常的void方法 </a><br/>
+ *      <a href="#6">6. Verification in order 验证顺序 </a><br/>
+ *      <a href="#7">7. Making sure interaction(s) never happened on mock 确保模拟中从未发生过互动 </a><br/>
+ *      <a href="#8">8. Finding redundant invocations 查找多余的调用 </a><br/>
+ *      <a href="#9">9. Shorthand for mocks creation - <code>&#064;Mock</code> annotation 模拟对象创建的简写——@Mock注解 </a><br/>
+ *      <a href="#10">10. Stubbing consecutive calls (iterator-style stubbing) 存根连续地调用(迭代器式存根) </a><br/>
+ *      <a href="#11">11. Stubbing with callbacks 带回调的存根 </a><br/>
+ *      <a href="#12">12. <code>doReturn()</code>|<code>doThrow()</code>|<code>doAnswer()</code>|<code>doNothing()</code>|<code>doCallRealMethod()</code> family of methods doXxx方法家族 </a><br/>
+ *      <a href="#13">13. Spying on real objects 监视真实的对象 </a><br/>
+ *      <a href="#14">14. Changing default return values of unstubbed invocations 更改未存根调用的默认返回值 (Since 1.7) </a><br/>
+ *      <a href="#15">15. Capturing arguments for further assertions 为进一步断言捕获参数 (Since 1.8.0) </a><br/>
+ *      <a href="#16">16. Real partial mocks 真正的部分模拟 (Since 1.8.0) </a><br/>
+ *      <a href="#17">17. Resetting mocks 重置模拟 (Since 1.8.0) </a><br/>
+ *      <a href="#18">18. Troubleshooting & validating framework usage 故障排除和验证框架的使用 (Since 1.8.0) </a><br/>
+ *      <a href="#19">19. Aliases for behavior driven development 行为驱动开发的别名 (Since 1.8.0) </a><br/>
+ *      <a href="#20">20. Serializable mocks 可序列化的模拟 (Since 1.8.1) </a><br/>
+ *      <a href="#21">21. New annotations: <code>&#064;Captor</code>, <code>&#064;Spy</code>, <code>&#064;InjectMocks</code> 新的注解：@Captor，@Spy，@InjectMocks (Since 1.8.3) </a><br/>
+ *      <a href="#22">22. Verification with timeout 超时验证 (Since 1.8.5) </a><br/>
+ *      <a href="#23">23. Automatic instantiation of <code>&#064;Spies</code>, <code>&#064;InjectMocks</code> and constructor injection goodness 自动实例化@Spies，@InjectMocks和构造函数注解良好性 (Since 1.9.0) </a><br/>
+ *      <a href="#24">24. One-liner stubs 单线存根 (Since 1.9.0) </a><br/>
+ *      <a href="#25">25. Verification ignoring stubs 验证忽略的存根 (Since 1.9.0) </a><br/>
+ *      <a href="#26">26. Mocking details 模拟细节 (Improved in 2.2.x) </a><br/>
+ *      <a href="#27">27. Delegate calls to real instance 将调用委托给真实实例 (Since 1.9.5) </a><br/>
+ *      <a href="#28">28. <code>MockMaker</code> API 模拟制作器API (Since 1.9.5) </a><br/>
+ *      <a href="#29">29. BDD style verification BDD风格验证 (Since 1.10.0) </a><br/>
+ *      <a href="#30">30. Spying or mocking abstract classes 监视或模拟抽象类 (Since 1.10.12, further enhanced in 2.7.13 and 2.7.14) </a><br/>
+ *      <a href="#31">31. Mockito mocks can be <em>serialized</em> / <em>deserialized</em> across classloaders Mockito模拟可以跨类加载器的序列化/反序列化 (Since 1.10.0) </a></h3><br/>
+ *      <a href="#32">32. Better generic support with deep stubs 带有深层存根的更好的通用支持 (Since 1.10.0) </a></h3><br/>
+ *      <a href="#33">33. Mockito JUnit rule JUnit规则 (Since 1.10.17) </a><br/>
+ *      <a href="#34">34. Switch <em>on</em> or <em>off</em> plugins 开启或关闭插件 (Since 1.10.15) </a><br/>
+ *      <a href="#35">35. Custom verification failure message 自定义验证失败的消息 (Since 2.1.0) </a><br/>
+ *      <a href="#36">36. Java 8 Lambda Matcher Support Lambda表达式匹配器支持 (Since 2.1.0) </a><br/>
+ *      <a href="#37">37. Java 8 Custom Answer Support 自定义答案支持 (Since 2.1.0) </a><br/>
+ *      <a href="#38">38. Meta data and generic type retention 元数据和通用类型保留 (Since 2.1.0) </a><br/>
+ *      <a href="#39">39. Mocking final types, enums and final methods 模拟最终类型，枚举和最终方法 (Since 2.1.0) </a><br/>
+ *      <a href="#40">40. Improved productivity and cleaner tests with "stricter" Mockito 使用"限制器"提高生产率和更清洁的测试 (Since 2.+) </a><br/>
+ *      <a href="#41">41. Advanced public API for framework integrations 用于框架集成的高级公共API (Since 2.10.+) </a><br/>
+ *      <a href="#42">42. New API for integrations: listening on verification start events 集成的新API：监听验证开始事件 (Since 2.11.+) </a><br/>
+ *      <a href="#43">43. New API for integrations: <code>MockitoSession</code> is usable by testing frameworks 集成的新API：会话可通过测试框架使用 (Since 2.15.+) </a><br/>
+ *      <a href="#44">44. Deprecated <code>org.mockito.plugins.InstantiatorProvider</code> as it was leaking internal API. it was replaced by <code>org.mockito.plugins.InstantiatorProvider2 (Since 2.15.4) </code></a><br/>
+ *      <a href="#45">45. New JUnit Jupiter (JUnit5+) extension 新的JUnit Jupiter (JUnit5+)扩展 </a><br/>
+ *      <a href="#46">46. New <code>Mockito.lenient()</code> and <code>MockSettings.lenient()</code> methods 新的Mockito.lenient()方法 (Since 2.20.0) </a><br/>
+ *      <a href="#47">47. New API for clearing mock state in inline mocking 用于清除内联模拟中的模拟状态的新API (Since 2.25.0) </a><br/>
  * </b>
  *
  * <h3 id="0">0. <a class="meaningful_link" href="#mockito2" name="mockito2">Migrating to Mockito 2</a></h3>
