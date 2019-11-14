@@ -814,14 +814,20 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="16">16. <a class="meaningful_link" href="#partial_mocks" name="partial_mocks">Real partial mocks</a> (Since 1.8.0)</h3>
+ * <h3 id="16">16. <a class="meaningful_link" href="#partial_mocks" name="partial_mocks">
+ *     Real partial mocks 真正的部分模拟</a> (Since 1.8.0)</h3>
  *
  *  Finally, after many internal debates & discussions on the mailing list, partial mock support was added to Mockito.
  *  Previously we considered partial mocks as code smells. However, we found a legitimate use case for partial mocks.
+ *  最后，在邮件列表上进行了许多内部辩论和讨论之后，Mockito添加了部分模拟支持。
+ *  以前，我们认为部分模拟是代码的坏味道。但是，我们发现了部分模拟的合法用例。
  *  <p>
  *  <b>Before release 1.8</b> <code>spy()</code> was not producing real partial mocks and it was confusing for some users.
  *  Read more about spying: <a href="#13">here</a> or in javadoc for {@link Mockito#spy(Object)} method.
+ *  在1.8版本之前，spy()并未产生真正的部分模拟，并且对某些用户造成了混乱。
+ *  阅读更多有关侦察的信息：此处或在文档中获取{@link Mockito#spy(Object)}方法。
  *  <p>
+ *
  *  <pre class="code"><code class="java">
  *    //you can create partial mock with spy() method:
  *    List list = spy(new LinkedList());
@@ -838,10 +844,16 @@ import org.mockito.verification.VerificationWithTimeout;
  * How does partial mock fit into this paradigm? Well, it just doesn't...
  * Partial mock usually means that the complexity has been moved to a different method on the same object.
  * In most cases, this is not the way you want to design your application.
+ * 您将阅读部分模拟的警告：面向对象编程通过将复杂度划分为单独的、特定的SRPy对象来解决复杂度问题。
+ * 部分模拟如何适应这种范例？好吧，事实并非如此。
+ * 部分模拟通常意味着复杂性已移至同一对象的不同方法。
+ * 在大多数情况下，这不是您设计应用程序的方式。
  * <p>
  * However, there are rare cases when partial mocks come handy:
  * dealing with code you cannot change easily (3rd party interfaces, interim refactoring of legacy code etc.)
  * However, I wouldn't use partial mocks for new, test-driven & well-designed code.
+ * 但是，在少数情况下，局部模拟会派上用场：处理您无法轻松更改的代码(第三方接口，遗留代码的临时重构等)。
+ * 但是，我不会将局部模拟用于新的测试驱动以及精心设计的代码。
  *
  *
  *
