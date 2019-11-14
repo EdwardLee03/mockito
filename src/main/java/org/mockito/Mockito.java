@@ -748,13 +748,18 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="14">14. Changing <a class="meaningful_link" href="#defaultreturn" name="defaultreturn">default return values of unstubbed invocations</a> (Since 1.7)</h3>
+ * <h3 id="14">14. Changing <a class="meaningful_link" href="#defaultreturn" name="defaultreturn">
+ *     default return values of unstubbed invocations 更改未存根调用的默认返回值</a> (Since 1.7)</h3>
  *
  * You can create a mock with specified strategy for its return values.
  * It's quite an advanced feature and typically you don't need it to write decent tests.
  * However, it can be helpful for working with <b>legacy systems</b>.
+ * 您可以使用指定策略为其返回值创建模拟对象。
+ * 这是一项高级功能，通常您不需要它来编写不错的测试。
+ * 但是，它对于使用旧系统可能会有所帮助。
  * <p>
  * It is the default answer so it will be used <b>only when you don't</b> stub the method call.
+ * 这是默认答案，因此仅当您不存根的方法调用时才会使用它。
  *
  * <pre class="code"><code class="java">
  *   Foo mock = mock(Foo.class, Mockito.RETURNS_SMART_NULLS);
