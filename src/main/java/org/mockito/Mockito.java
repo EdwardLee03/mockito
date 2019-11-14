@@ -772,12 +772,17 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="15">15. <a class="meaningful_link" href="#captors" name="captors">Capturing arguments</a> for further assertions (Since 1.8.0)</h3>
+ * <h3 id="15">15. <a class="meaningful_link" href="#captors" name="captors">
+ *     Capturing arguments</a> for further assertions 为进一步断言捕获参数 (Since 1.8.0)</h3>
  *
  * Mockito verifies argument values in natural java style: by using an <code>equals()</code> method.
  * This is also the recommended way of matching arguments because it makes tests clean & simple.
  * In some situations though, it is helpful to assert on certain arguments after the actual verification.
  * For example:
+ * Mockito以自然的java样式验证参数值：通过使用equals()方法。
+ * 这也是推荐的匹配参数的方法，因为它使测试简洁明了。
+ * 但是，在某些情况下，在实际验证之后对某些参数进行断言是有帮助的。
+ *
  * <pre class="code"><code class="java">
  *   ArgumentCaptor&lt;Person&gt; argument = ArgumentCaptor.forClass(Person.class);
  *   verify(mock).doSomething(argument.capture());
@@ -787,15 +792,24 @@ import org.mockito.verification.VerificationWithTimeout;
  * <b>Warning:</b> it is recommended to use ArgumentCaptor with verification <b>but not</b> with stubbing.
  * Using ArgumentCaptor with stubbing may decrease test readability because captor is created outside of assert (aka verify or 'then') block.
  * Also it may reduce defect localization because if stubbed method was not called then no argument is captured.
+ * 警告：建议对验证使用ArgumentCaptor，但不要对存根使用。
+ * 结合存根使用ArgumentCaptor可能会降低测试的可读性，因为捕手是在断言块之外创建的。
+ * 同样，它可以减少缺陷的定位，因为如果未调用存根方法，则不会捕获任何参数。
  * <p>
  * In a way ArgumentCaptor is related to custom argument matchers (see javadoc for {@link ArgumentMatcher} class).
  * Both techniques can be used for making sure certain arguments were passed to mocks.
  * However, ArgumentCaptor may be a better fit if:
+ * 在某种程度上，ArgumentCaptor与自定义参数匹配器有关。
+ * 两种技术都可用于确保将某些参数传递给模拟对象。
+ * 但是，如果满足以下条件，则ArgumentCaptor可能更合适：
  * <ul>
  * <li>custom argument matcher is not likely to be reused</li>
+ * 自定义参数匹配器不太可能被重用
  * <li>you just need it to assert on argument values to complete verification</li>
+ * 您只需要用它来声明参数值即可完成验证
  * </ul>
  * Custom argument matchers via {@link ArgumentMatcher} are usually better for stubbing.
+ * 通过ArgumentMatcher定制的参数匹配器通常更适合存根。
  *
  *
  *
