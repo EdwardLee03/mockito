@@ -1407,15 +1407,22 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="36">36. <a class="meaningful_link" href="#Java_8_Lambda_Matching" name="Java_8_Lambda_Matching">Java 8 Lambda Matcher Support</a> (Since 2.1.0)</h3>
+ * <h3 id="36">36. <a class="meaningful_link" href="#Java_8_Lambda_Matching" name="Java_8_Lambda_Matching">
+ *     Java 8 Lambda Matcher Support Lambda表达式匹配器支持</a> (Since 2.1.0)</h3>
  * <p>
  * You can use Java 8 lambda expressions with {@link ArgumentMatcher} to reduce the dependency on {@link ArgumentCaptor}.
  * If you need to verify that the input to a function call on a mock was correct, then you would normally
  * use the {@link ArgumentCaptor} to find the operands used and then do subsequent assertions on them. While
- * for complex examples this can be useful, it's also long-winded.<p>
+ * for complex examples this can be useful, it's also long-winded.
+ * 您可以将Java 8 lambda表达式与{@link ArgumentMatcher}一起使用，以减少对{@link ArgumentCaptor}的依赖性。
+ * 如果需要验证对模拟函数调用的输入是否正确，则通常可以使用{@link ArgumentCaptor}查找所使用的操作数，然后对它们进行后续声明。
+ * 虽然对于复杂的示例来说这可能是有用的，但也很费劲。
+ * <p>
  * Writing a lambda to express the match is quite easy. The argument to your function, when used in conjunction
  * with argThat, will be passed to the ArgumentMatcher as a strongly typed object, so it is possible
  * to do anything with it.
+ * 编写lambda表示匹配很容易。
+ * 与argThat一起使用时，函数的参数将作为强类型对象传递给ArgumentMatcher，因此可以执行任何操作。
  * <p>
  * Examples:
  * <p>
