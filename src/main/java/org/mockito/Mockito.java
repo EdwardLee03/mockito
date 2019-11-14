@@ -1836,10 +1836,17 @@ import org.mockito.verification.VerificationWithTimeout;
  * by {@link org.mockito.plugins.InstantiatorProvider2}. Old {@link org.mockito.plugins.InstantiatorProvider
  * instantiator providers} will continue to work, but it is recommended to switch to the new API.</p>
  *
- * <h3 id="45">45. <a class="meaningful_link" href="#junit5_mockito" name="junit5_mockito">New JUnit Jupiter (JUnit5+) extension</a></h3>
+ *
+ *
+ * <h3 id="45">45. <a class="meaningful_link" href="#junit5_mockito" name="junit5_mockito">
+ *     New JUnit Jupiter (JUnit5+) extension 新的JUnit Jupiter (JUnit5+)扩展</a></h3>
  *
  * For integration with JUnit Jupiter (JUnit5+), use the `org.mockito:mockito-junit-jupiter` artifact.
  * For more information about the usage of the integration, see <a href="http://javadoc.io/page/org.mockito/mockito-junit-jupiter/latest/org/mockito/junit/jupiter/MockitoExtension.html">the JavaDoc of <code>MockitoExtension</code></a>.
+ * 为了与JUnit Jupiter (JUnit5+)集成，请使用`org.mockito:mockito-junit-jupiter`工件。
+ * 有关集成用法的更多信息，请参见MockitoExtension的文档。
+ *
+ *
  *
  * <h3 id="46">46. <a class="meaningful_link" href="#mockito_lenient" name="mockito_lenient">
  *       New <code>Mockito.lenient()</code> and <code>MockSettings.lenient()</code> methods (Since 2.20.0)</a></h3>
