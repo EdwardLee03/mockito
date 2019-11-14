@@ -1107,15 +1107,21 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="25">25. <a class="meaningful_link" href="#ignore_stubs_verification" name="ignore_stubs_verification">Verification ignoring stubs</a> (Since 1.9.0)</h3>
+ * <h3 id="25">25. <a class="meaningful_link" href="#ignore_stubs_verification" name="ignore_stubs_verification">
+ *     Verification ignoring stubs 验证忽略的存根</a> (Since 1.9.0)</h3>
  * <p>
  * Mockito will now allow to ignore stubbing for the sake of verification.
  * Sometimes useful when coupled with <code>verifyNoMoreInteractions()</code> or verification <code>inOrder()</code>.
  * Helps avoiding redundant verification of stubbed calls - typically we're not interested in verifying stubs.
+ * 为了进行验证，Mockito现在将允许忽略存根。
+ * 有时在与verifyNoMoreInteractions()或inOrder()验证结合时很有用。
+ * 帮助避免对存根调用进行冗余验证，通常我们对验证存根不感兴趣。
  * <p>
  * <b>Warning</b>, <code>ignoreStubs()</code> might lead to overuse of verifyNoMoreInteractions(ignoreStubs(...));
  * Bear in mind that Mockito does not recommend bombarding every test with <code>verifyNoMoreInteractions()</code>
  * for the reasons outlined in javadoc for {@link Mockito#verifyNoMoreInteractions(Object...)}
+ * 警告，ignoreStubs()可能导致滥用verifyNoMoreInteractions(ignoreStubs(...))；
+ * Mockito不建议使用{@link Mockito#verifyNoMoreInteractions(Object...)}轰炸每个测试。
  * <p>Some examples:
  * <pre class="code"><code class="java">
  * verify(mock).foo();
@@ -1132,6 +1138,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * </code></pre>
  * <p>
  * Advanced examples and more details can be found in javadoc for {@link Mockito#ignoreStubs(Object...)}
+ * 可以在{@link Mockito#ignoreStubs(Object...)}的文档中找到高级示例代码和更多的详细信息。
  *
  *
  *
