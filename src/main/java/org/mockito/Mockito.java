@@ -1538,12 +1538,16 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="38">38. <a class="meaningful_link" href="#Meta_Data_And_Generics" name="Meta_Data_And_Generics">Meta data and generic type retention</a> (Since 2.1.0)</h3>
+ * <h3 id="38">38. <a class="meaningful_link" href="#Meta_Data_And_Generics" name="Meta_Data_And_Generics">
+ *     Meta data and generic type retention 元数据和通用类型保留</a> (Since 2.1.0)</h3>
  *
  * <p>
  * Mockito now preserves annotations on mocked methods and types as well as generic meta data. Previously, a mock type did not preserve
  * annotations on types unless they were explicitly inherited and never retained annotations on methods. As a consequence, the following
  * conditions now hold true:
+ * 现在，Mockito保留关于模拟方法和类型以及通用元数据的注解。
+ * 以前，模拟类型不会保留类型的注解，除非它们被显式继承并且永远不会在方法上保留注解。
+ * 因此，现在满足以下条件：
  *
  * <pre class="code"><code class="java">
  * {@literal @}{@code MyAnnotation
@@ -1559,6 +1563,9 @@ import org.mockito.verification.VerificationWithTimeout;
  * <p>
  * When using Java 8, Mockito now also preserves type annotations. This is default behavior and might not hold <a href="#28">if an
  * alternative {@link org.mockito.plugins.MockMaker} is used</a>.
+ * 当使用Java 8时，Mockito现在还保留类型注解。这是默认行为，如果使用其他{@link org.mockito.plugins.MockMaker}，则可能不成立。
+ *
+ *
  *
  * <h3 id="39">39. <a class="meaningful_link" href="#Mocking_Final" name="Mocking_Final">Mocking final types, enums and final methods</a> (Since 2.1.0)</h3>
  *
