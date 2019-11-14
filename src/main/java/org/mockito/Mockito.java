@@ -579,14 +579,19 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="11">11. <a class="meaningful_link" href="#answer_stubs" name="answer_stubs">Stubbing with callbacks</a></h3>
+ * <h3 id="11">11. <a class="meaningful_link" href="#answer_stubs" name="answer_stubs">
+ *     Stubbing with callbacks 带回调的存根</a></h3>
  *
  * Allows stubbing with generic {@link Answer} interface.
+ * 允许使用通用的{@link Answer}接口进行存根。
  * <p>
  * Yet another controversial feature which was not included in Mockito
  * originally. We recommend simply stubbing with <code>thenReturn()</code> or
  * <code>thenThrow()</code>, which should be enough to test/test-drive
  * any clean & simple code. However, if you do have a need to stub with the generic Answer interface, here is an example:
+ * 另一个有争议的功能最初并未包含在Mockito中。
+ * 建议仅使用thenReturn()或thenThrow()进行存根，应该足以测试/测试驱动任何干净简洁的代码。
+ * 但是，如果您确实需要使用Answer接口进行存根，请参考以下示例：
  *
  * <pre class="code"><code class="java">
  * when(mock.someMethod(anyString())).thenAnswer(
