@@ -1058,16 +1058,21 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  * <h3 id="23">23. <a class="meaningful_link" href="#automatic_instantiation" name="automatic_instantiation">Automatic instantiation of <code>&#064;Spies</code>,
- * <code>&#064;InjectMocks</code></a> and <a class="meaningful_link" href="#constructor_injection" name="constructor_injection">constructor injection goodness</a> (Since 1.9.0)</h3>
+ * <code>&#064;InjectMocks</code></a> and <a class="meaningful_link" href="#constructor_injection" name="constructor_injection">constructor injection goodness</a>
+ * 自动实例化@Spies，@InjectMocks和构造函数注入良好性 (Since 1.9.0)</h3>
  *
  * <p>
  * Mockito will now try to instantiate &#064;{@link Spy} and will instantiate &#064;{@link InjectMocks} fields
  * using <b>constructor</b> injection, <b>setter</b> injection, or <b>field</b> injection.
+ * Mockito现在将尝试实例化@{@link Spy}，并将使用构造函数注入，setter注入或字段注入实例化@{@link InjectMocks}字段。
  * <p>
  * To take advantage of this feature you need to use {@link MockitoAnnotations#initMocks(Object)}, {@link MockitoJUnitRunner}
  * or {@link MockitoRule}.
+ * 要利用此功能，您需要使用{@link MockitoAnnotations#initMocks(Object)}，{@link MockitoJUnitRunner}或{@link MockitoRule}。
  * <p>
  * Read more about available tricks and the rules of injection in the javadoc for {@link InjectMocks}
+ * 在{@link InjectMocks}的文档中，阅读有关可用技巧和注入规则的更多信息。
+ *
  * <pre class="code"><code class="java">
  * //instead:
  * &#064;Spy BeerDrinker drinker = new BeerDrinker();
