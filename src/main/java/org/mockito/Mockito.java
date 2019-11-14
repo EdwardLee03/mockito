@@ -379,7 +379,8 @@ import org.mockito.verification.VerificationWithTimeout;
  * 在第12节中了解有关doThrow()|doAnswer()系列方法的更多信息。
  * <p>
  *
- * <h3 id="6">6. <a class="meaningful_link" href="#in_order_verification" name="in_order_verification">Verification in order</a></h3>
+ * <h3 id="6">6. <a class="meaningful_link" href="#in_order_verification" name="in_order_verification">
+ *     Verification in order 验证顺序</a></h3>
  *
  * <pre class="code"><code class="java">
  * // A. Single mock whose methods must be invoked in a particular order
@@ -417,9 +418,11 @@ import org.mockito.verification.VerificationWithTimeout;
  * Verification in order is flexible - <b>you don't have to verify all
  * interactions</b> one-by-one but only those that you are interested in
  * testing in order.
+ * 按顺序进行验证是灵活的，您不必一一验证所有交互，而只需依次验证您感兴趣的交互即可。
  * <p>
  * Also, you can create an InOrder object passing only the mocks that are relevant for
  * in-order verification.
+ * 同样，您可以创建一个InOrder对象，这个对象仅传递与顺序验证有关的模拟对象。
  *
  *
  *
