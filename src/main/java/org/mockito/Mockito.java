@@ -1849,19 +1849,26 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  * <h3 id="46">46. <a class="meaningful_link" href="#mockito_lenient" name="mockito_lenient">
- *       New <code>Mockito.lenient()</code> and <code>MockSettings.lenient()</code> methods (Since 2.20.0)</a></h3>
+ *       New <code>Mockito.lenient()</code> and <code>MockSettings.lenient()</code> methods
+ *       新的Mockito.lenient()方法 (Since 2.20.0)</a></h3>
  *
  * Strict stubbing feature is available since early Mockito 2.
  * It is very useful because it drives cleaner tests and improved productivity.
  * Strict stubbing reports unnecessary stubs, detects stubbing argument mismatch and makes the tests more DRY ({@link Strictness#STRICT_STUBS}).
  * This comes with a trade-off: in some cases, you may get false negatives from strict stubbing.
  * To remedy those scenarios you can now configure specific stubbing to be lenient, while all the other stubbings and mocks use strict stubbing:
+ * 从Mockito 2早期开始就可以使用严格的存根功能。
+ * 它非常有用，因为它可以推动更干净的测试并提高生产率。
+ * 严格存根报告不必要的存根，检测存根参数不匹配，并使测试更清洁({@link Strictness#STRICT_STUBS})。
+ * 这需要权衡：在某些情况下，严格的存根可能会导致误报。
+ * 为了解决这些情况，您现在可以将特定的存根配置为宽松，而所有其他存根和模拟都使用严格的存根。
  *
  * <pre class="code"><code class="java">
  *   lenient().when(mock.foo()).thenReturn("ok");
  * </code></pre>
  *
  * If you want all the stubbings on a given mock to be lenient, you can configure the mock accordingly:
+ * 如果希望给定模拟的所有存根都宽松，则可以相应地配置模拟：
  *
  * <pre class="code"><code class="java">
  *   Foo mock = Mockito.mock(Foo.class, withSettings().lenient());
@@ -1869,6 +1876,10 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  * For more information refer to {@link Mockito#lenient()}.
  * Let us know how do you find the new feature by opening a GitHub issue to discuss!
+ * 有关更多信息，请参考{@link Mockito#lenient()}。
+ * 通过打开GitHub问题进行讨论，让我们知道您如何找到新功能！
+ *
+ *
  *
  * <h3 id="47">47. <a class="meaningful_link" href="#clear_inline_mocks" name="clear_inline_mocks">New API for clearing mock state in inline mocking (Since 2.25.0)</a></h3>
  *
