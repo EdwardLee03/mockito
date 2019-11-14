@@ -1086,12 +1086,17 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="24">24. <a class="meaningful_link" href="#one_liner_stub" name="one_liner_stub">One-liner stubs</a> (Since 1.9.0)</h3>
+ * <h3 id="24">24. <a class="meaningful_link" href="#one_liner_stub" name="one_liner_stub">
+ *     One-liner stubs 单线存根</a> (Since 1.9.0)</h3>
  * <p>
  * Mockito will now allow you to create mocks when stubbing.
  * Basically, it allows to create a stub in one line of code.
  * This can be helpful to keep test code clean.
  * For example, some boring stub can be created & stubbed at field initialization in a test:
+ * Mockito现在将允许您在存根时创建模拟对象。
+ * 基本上，它允许在一行代码中创建存根。这有助于保持测试代码的清洁。
+ * 例如，一些无聊的存根可以在测试中的字段初始化时创建和存根。
+ *
  * <pre class="code"><code class="java">
  * public class CarTest {
  *   Car boringStubbedCar = when(mock(Car.class).shiftGear()).thenThrow(EngineNotStarted.class).getMock();
