@@ -247,10 +247,13 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="3">3. <a class="meaningful_link" href="#argument_matchers" name="argument_matchers">Argument matchers</a></h3>
+ * <h3 id="3">3. <a class="meaningful_link" href="#argument_matchers" name="argument_matchers">
+ *     Argument matchers 参数匹配器</a></h3>
  *
  * Mockito verifies argument values in natural java style: by using an <code>equals()</code> method.
  * Sometimes, when extra flexibility is required then you might use argument matchers:
+ * Mockito以自然的java样式验证参数值：通过使用equals()方法。
+ * 有时，当需要额外的灵活性时，您可以使用参数匹配器。
  *
  * <pre class="code"><code class="java">
  * //stubbing using built-in anyInt() argument matcher
@@ -274,22 +277,30 @@ import org.mockito.verification.VerificationWithTimeout;
  * Argument matchers allow flexible verification or stubbing.
  * {@link ArgumentMatchers Click here} {@link org.mockito.hamcrest.MockitoHamcrest or here} to see more built-in matchers
  * and examples of <b>custom argument matchers / hamcrest matchers</b>.
+ * 参数匹配器允许灵活地验证或存根。
+ * 点击{@link ArgumentMatchers}查看更多的内置匹配器以及自定义的参数匹配器/hamcrest匹配器的示例代码。
  * <p>
  * For information solely on <b>custom argument matchers</b> check out javadoc for {@link ArgumentMatcher} class.
+ * 有关仅自定义参数匹配器的信息，请查看{@link ArgumentMatcher}类的文档。
  * <p>
  * Be reasonable with using complicated argument matching.
  * The natural matching style using <code>equals()</code> with occasional <code>anyX()</code> matchers tend to give clean & simple tests.
  * Sometimes it's just better to refactor the code to allow <code>equals()</code> matching or even implement <code>equals()</code> method to help out with testing.
+ * 使用复杂的参数匹配是合理的。
+ * 将equals()与偶然的anyX()匹配器配合使用的自然匹配样式倾向于提供简洁的测试。
+ * 有时最好重构代码以允许equals()匹配，甚至实现equals()方法来帮助进行测试。
  * <p>
  * Also, read <a href="#15">section 15</a> or javadoc for {@link ArgumentCaptor} class.
  * {@link ArgumentCaptor} is a special implementation of an argument matcher that captures argument values for further assertions.
+ * {@link ArgumentCaptor}是参数匹配器的一种特殊实现，它捕获参数值以用于进一步的断言。
  * <p>
- * <b>Warning on argument matchers:</b>
+ * <b>Warning on argument matchers 警告参数匹配器:</b>
  * <p>
  * If you are using argument matchers, <b>all arguments</b> have to be provided
  * by matchers.
+ * 如果使用参数匹配器，则必须由匹配器提供所有参数。
  * <p>
- The following example shows verification but the same applies to stubbing:
+ * The following example shows verification but the same applies to stubbing:
  *
  * <pre class="code"><code class="java">
  *   verify(mock).someMethod(anyInt(), anyString(), <b>eq("third argument")</b>);
@@ -304,6 +315,10 @@ import org.mockito.verification.VerificationWithTimeout;
  * Internally, they record a matcher on a stack and return a dummy value (usually null).
  * This implementation is due to static type safety imposed by the java compiler.
  * The consequence is that you cannot use <code>anyObject()</code>, <code>eq()</code> methods outside of verified/stubbed method.
+ * 匹配器方法不返回匹配器。
+ * 在内部，他们在堆栈上记录一个匹配器，并返回一个虚拟值(通常为null)。
+ * 这个实现归因于Java编译器施加的静态类型安全性。
+ * 结果是您不能在经过验证/存根的方法之外使用anyObject()和eq()方法。
  *
  *
  *
