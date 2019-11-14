@@ -482,13 +482,20 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="9">9. <a class="meaningful_link" href="#mock_annotation" name="mock_annotation">Shorthand for mocks creation - <code>&#064;Mock</code> annotation</a></h3>
+ * <h3 id="9">9. <a class="meaningful_link" href="#mock_annotation" name="mock_annotation">
+ *     Shorthand for mocks creation - <code>&#064;Mock</code> annotation
+ *     模拟对象创建的简写——@Mock注解</a></h3>
  *
  * <ul>
+ * <li>Allows shorthand creation of objects required for testing.</li>
+ * 允许快速地创建测试所需的对象。
  * <li>Minimizes repetitive mock creation code.</li>
+ * 最小化重复的模拟对象的创建代码。
  * <li>Makes the test class more readable.</li>
+ * 使测试类更具可读性。
  * <li>Makes the verification error easier to read because the <b>field name</b>
  * is used to identify the mock.</li>
+ * 因为字段名称用于标识模拟对象，所以使验证错误更易于阅读。
  * </ul>
  *
  * <pre class="code"><code class="java">
@@ -503,6 +510,7 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  * <b>Important!</b> This needs to be somewhere in the base class or a test
  * runner:
+ * 重要！这需要在基类或测试运行器中：
  *
  * <pre class="code"><code class="java">
  * MockitoAnnotations.initMocks(testClass);
@@ -510,8 +518,11 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  * You can use built-in runner: {@link MockitoJUnitRunner} or a rule: {@link MockitoRule}.
  * For JUnit5 tests, refer to the JUnit5 extension described in <a href="#45">section 45</a>.
+ * 您可以使用内置的运行器：{@link MockitoJUnitRunner}或规则{@link MockitoRule}。
+ * 对于JUnit5测试用例，请参阅第45节中描述的JUnit5扩展。
  * <p>
  * Read more here: {@link MockitoAnnotations}
+ * 在此处阅读更多内容：{@link MockitoAnnotations}
  *
  *
  *
