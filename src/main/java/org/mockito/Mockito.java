@@ -889,16 +889,21 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="18">18. <a class="meaningful_link" href="#framework_validation" name="framework_validation">Troubleshooting & validating framework usage</a> (Since 1.8.0)</h3>
+ * <h3 id="18">18. <a class="meaningful_link" href="#framework_validation" name="framework_validation">
+ *     Troubleshooting & validating framework usage 故障排除和验证框架的使用</a> (Since 1.8.0)</h3>
  *
  * First of all, in case of any trouble, I encourage you to read the Mockito FAQ:
  * <a href="https://github.com/mockito/mockito/wiki/FAQ">https://github.com/mockito/mockito/wiki/FAQ</a>
+ * 首先，如果有任何麻烦，建议您阅读Mockito常见问题解答。
  * <p>
  * In case of questions you may also post to mockito mailing list:
  * <a href="http://groups.google.com/group/mockito">http://groups.google.com/group/mockito</a>
+ * 如有疑问，您也可以张贴到mockito的邮件列表。
  * <p>
  * Next, you should know that Mockito validates if you use it correctly <b>all the time</b>.
  * However, there's a gotcha so please read the javadoc for {@link Mockito#validateMockitoUsage()}
+ * 接下来，您应该知道Mockito会一直验证是否正确使用它。
+ * 但是，有一个陷阱，所以请阅读{@link Mockito#validateMockitoUsage()}的文档。
  *
  *
  *
