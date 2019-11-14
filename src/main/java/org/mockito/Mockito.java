@@ -196,7 +196,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="2">2. <a class="meaningful_link" href="#stubbing" name="stubbing">How about some stubbing?</a></h3>
+ * <h3 id="2">2. <a class="meaningful_link" href="#stubbing" name="stubbing">
+ *     How about some stubbing? 存根怎么样？</a></h3>
  *
  * <pre class="code"><code class="java">
  * //You can mock concrete classes, not just interfaces
@@ -225,6 +226,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * <li> By default, for all methods that return a value, a mock will return either null,
  * a primitive/primitive wrapper value, or an empty collection, as appropriate.
  * For example 0 for an int/Integer and false for a boolean/Boolean. </li>
+ * 默认情况下，对于所有返回值的方法，模拟对象将酌情返回null、基本类型/基本类型包装器值或空集合。
  *
  * <li> Stubbing can be overridden: for example common stubbing can go to
  * fixture setup but the test methods can override it.
@@ -232,11 +234,14 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  * <li> Once stubbed, the method will always return a stubbed value, regardless
  * of how many times it is called. </li>
+ * 一旦被存根后，这个方法将始终返回存根值，而不管其被调用了多少次。
  *
  * <li> Last stubbing is more important - when you stubbed the same method with
  * the same arguments many times.
  * Other words: <b>the order of stubbing matters</b> but it is only meaningful rarely,
  * e.g. when stubbing exactly the same method calls or sometimes when argument matchers are used, etc.</li>
+ * 最后一次存根更为重要，当您多次对具有相同参数的相同方法进行存根时。
+ * 换句话说：存根的顺序很重要，但很少有意义。
  *
  * </ul>
  *
