@@ -611,12 +611,16 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  * <h3 id="12">12. <a class="meaningful_link" href="#do_family_methods_stubs" name="do_family_methods_stubs"><code>doReturn()</code>|<code>doThrow()</code>|
- * <code>doAnswer()</code>|<code>doNothing()</code>|<code>doCallRealMethod()</code> family of methods</a></h3>
+ * <code>doAnswer()</code>|<code>doNothing()</code>|<code>doCallRealMethod()</code>
+ * family of methods doXxx方法家族</a></h3>
  *
  * Stubbing void methods requires a different approach from {@link Mockito#when(Object)} because the compiler does not
  * like void methods inside brackets...
+ * 对void方法进行存根，需要来源{@link Mockito#when(Object)}不同的方法，因为编译器不喜欢方括号内的void方法。
  * <p>
  * Use <code>doThrow()</code> when you want to stub a void method with an exception:
+ * 当您想通过异常存根void方法时，请使用doThrow()：
+ *
  * <pre class="code"><code class="java">
  *   doThrow(new RuntimeException()).when(mockedList).clear();
  *
@@ -629,12 +633,18 @@ import org.mockito.verification.VerificationWithTimeout;
  * You can use <code>doThrow()</code>, <code>doAnswer()</code>, <code>doNothing()</code>, <code>doReturn()</code>
  * and <code>doCallRealMethod()</code> in place of the corresponding call with <code>when()</code>, for any method.
  * It is necessary when you
+ * 对于任何方法，您都可以使用when()代替doThrow()、doAnswer()、doNothing()、doReturn()和doCallRealMethod()。
+ * 当你有必要
  * <ul>
  *     <li>stub void methods</li>
+ *     存根void方法
  *     <li>stub methods on spy objects (see below)</li>
+ *     侦察对象的存根方法(请参见下文)
  *     <li>stub the same method more than once, to change the behaviour of a mock in the middle of a test.</li>
+ *     多次对同一方法进行存根测试，以在测试过程中更改模拟对象的行为。
  * </ul>
  * but you may prefer to use these methods in place of the alternative with <code>when()</code>, for all of your stubbing calls.
+ * 但是对于所有存根调用，您可能更喜欢使用这些方法代替when()的替代方法。
  * <p>
  * Read more about these methods:
  * <p>
