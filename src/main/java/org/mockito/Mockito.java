@@ -87,7 +87,7 @@ import org.mockito.verification.VerificationWithTimeout;
  *      <a href="#27">27. Delegate calls to real instance 将调用委托给真实实例 (Since 1.9.5) </a><br/>
  *      <a href="#28">28. <code>MockMaker</code> API 模拟制作器API (Since 1.9.5) </a><br/>
  *      <a href="#29">29. BDD style verification BDD风格验证 (Since 1.10.0) </a><br/>
- *      <a href="#30">30. Spying or mocking abstract classes 监视或模拟抽象类 (Since 1.10.12, further enhanced in 2.7.13 and 2.7.14) </a><br/>
+ *      <a href="#30">30. Spying or mocking abstract classes 侦察或模拟抽象类 (Since 1.10.12, further enhanced in 2.7.13 and 2.7.14) </a><br/>
  *      <a href="#31">31. Mockito mocks can be <em>serialized</em> / <em>deserialized</em> across classloaders Mockito模拟可以跨类加载器的序列化/反序列化 (Since 1.10.0) </a></h3><br/>
  *      <a href="#32">32. Better generic support with deep stubs 带有深层存根的更好的通用支持 (Since 1.10.0) </a></h3><br/>
  *      <a href="#33">33. Mockito JUnit rule JUnit规则 (Since 1.10.17) </a><br/>
@@ -1260,14 +1260,19 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="30">30. <a class="meaningful_link" href="#spying_abstract_classes" name="spying_abstract_classes">Spying or mocking abstract classes (Since 1.10.12, further enhanced in 2.7.13 and 2.7.14)</a></h3>
+ * <h3 id="30">30. <a class="meaningful_link" href="#spying_abstract_classes" name="spying_abstract_classes">
+ *     Spying or mocking abstract classes 侦察或模拟抽象类 (Since 1.10.12, further enhanced in 2.7.13 and 2.7.14)</a></h3>
  *
  * It is now possible to conveniently spy on abstract classes. Note that overusing spies hints at code design smells (see {@link #spy(Object)}).
+ * 现在可以方便地侦察抽象类。请注意，过度使用侦察会暗示代码设计的坏味道(请参阅{@link #spy(Object)})。
  * <p>
  * Previously, spying was only possible on instances of objects.
  * New API makes it possible to use constructor when creating an instance of the mock.
  * This is particularly useful for mocking abstract classes because the user is no longer required to provide an instance of the abstract class.
  * At the moment, only parameter-less constructor is supported, let us know if it is not enough.
+ * 以前，只能在对象实例上进行侦察活动。新的API可以在创建模拟实例时使用构造函数。
+ * 这对于模拟抽象类特别有用，因为不再需要用户提供抽象类的实例。
+ * 目前，仅支持无参构造函数，如果不够的话，请通知我们。
  *
  * <pre class="code"><code class="java">
  * //convenience API, new overloaded spy() method:
