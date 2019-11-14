@@ -1857,9 +1857,8 @@ import org.mockito.verification.VerificationWithTimeout;
  * Strict stubbing reports unnecessary stubs, detects stubbing argument mismatch and makes the tests more DRY ({@link Strictness#STRICT_STUBS}).
  * This comes with a trade-off: in some cases, you may get false negatives from strict stubbing.
  * To remedy those scenarios you can now configure specific stubbing to be lenient, while all the other stubbings and mocks use strict stubbing:
- * 从Mockito 2早期开始就可以使用严格的存根功能。
- * 它非常有用，因为它可以推动更干净的测试并提高生产率。
- * 严格存根报告不必要的存根，检测存根参数不匹配，并使测试更清洁({@link Strictness#STRICT_STUBS})。
+ * 从Mockito 2早期开始就可以使用严格的存根功能。它非常有用，因为它可以推动更干净的测试并提高生产率。
+ * 严格存根报告不必要的存根，检测存根参数不匹配，并使测试更严格({@link Strictness#STRICT_STUBS})。
  * 这需要权衡：在某些情况下，严格的存根可能会导致误报。
  * 为了解决这些情况，您现在可以将特定的存根配置为宽松，而所有其他存根和模拟都使用严格的存根。
  *
@@ -1881,7 +1880,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="47">47. <a class="meaningful_link" href="#clear_inline_mocks" name="clear_inline_mocks">New API for clearing mock state in inline mocking (Since 2.25.0)</a></h3>
+ * <h3 id="47">47. <a class="meaningful_link" href="#clear_inline_mocks" name="clear_inline_mocks">
+ *     New API for clearing mock state in inline mocking 用于清除内联模拟中的模拟状态的新API (Since 2.25.0)</a></h3>
  *
  * In certain specific, rare scenarios (issue <a href="https://github.com/mockito/mockito/pull/1619">#1619</a>)
  * inline mocking causes memory leaks.
@@ -1889,6 +1889,10 @@ import org.mockito.verification.VerificationWithTimeout;
  * Hence, we introduced a new API to explicitly clear mock state (only make sense in inline mocking!).
  * See example usage in {@link MockitoFramework#clearInlineMocks()}.
  * If you have feedback or a better idea how to solve the problem please reach out.
+ * 在某些特定的罕见情况下，内联模拟会导致内存泄漏。没有干净的方法可以完全缓解这个问题。
+ * 因此，我们引入了一个新的API以显式清除模拟状态(仅在内联模拟中有意义！)。
+ * 请参阅{@link MockitoFramework#clearInlineMocks()}中的示例用法。
+ * 如果您有反馈或更好的解决方法，请联系我们。
  */
 @SuppressWarnings("unchecked")
 public class Mockito extends ArgumentMatchers {
