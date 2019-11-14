@@ -1759,24 +1759,33 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  * <h3 id="42">42. <a class="meaningful_link" href="#verifiation_started_listener" name="verifiation_started_listener">
- *       New API for integrations: listening on verification start events (Since 2.11.+)</a></h3>
+ *       New API for integrations: listening on verification start events 集成的新API：监听验证开始事件 (Since 2.11.+)</a></h3>
  *
  * Framework integrations such as <a href="https://projects.spring.io/spring-boot">Spring Boot</a> needs public API to tackle double-proxy use case
  * (<a href="https://github.com/mockito/mockito/issues/1191">issue 1191</a>).
  * We added:
+ * 诸如Spring Boot之类的框架集成需要公共API才能解决双重代理用例(1191问题)。
  * <ul>
  *     <li>New {@link VerificationStartedListener} and {@link VerificationStartedEvent}
  *      enable framework integrators to replace the mock object for verification.
  *      The main driving use case is <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> integration.
  *      For details see Javadoc for {@link VerificationStartedListener}.
  *     </li>
+ *     新的{@link VerificationStartedListener}和{@link VerificationStartedEvent}
+ *     使框架集成商可以替换模拟对象以进行验证。主要的驱动用例是Spring Boot集成。
  *     <li>New public method {@link MockSettings#verificationStartedListeners(VerificationStartedListener...)}
  *     allows to supply verification started listeners at mock creation time.
  *     </li>
+ *     新的公共方法{@link MockSettings#verificationStartedListeners(VerificationStartedListener...)}
+ *     允许在模拟创建时提供验证启动的侦听器。
  *     <li>New handy method {@link MockingDetails#getMock()} was added to make the {@code MockingDetails} API more complete.
  *     We found this method useful during the implementation.
  *     </li>
+ *     添加了新的便捷方法{@link MockingDetails#getMock()}，以使{@code MockingDetails} API更加完整。
+ *     我们发现这个方法在实施过程中很有用。
  * </ul>
+ *
+ *
  *
  * <h3 id="43">43. <a class="meaningful_link" href="#mockito_session_testing_frameworks" name="mockito_session_testing_frameworks">
  *       New API for integrations: <code>MockitoSession</code> is usable by testing frameworks (Since 2.15.+)</a></h3>
