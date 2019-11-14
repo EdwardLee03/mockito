@@ -3,7 +3,6 @@ package org.mockito;
 
 import org.mockito.exceptions.misusing.PotentialStubbingProblem;
 import org.mockito.exceptions.misusing.UnnecessaryStubbingException;
-import org.mockito.internal.InternalMockHandler;
 import org.mockito.internal.MockitoCore;
 import org.mockito.internal.creation.MockSettingsImpl;
 import org.mockito.internal.debugging.MockitoDebuggerImpl;
@@ -51,6 +50,30 @@ import org.mockito.verification.VerificationWithTimeout;
  * every day, with every commit.
  * 所有文档都保存在javadocs中，因为它可以确保web内容和源代码之间的一致性。
  * 它激励Mockito开发人员使他们每天每次提交的代码都保持最新的文档。
+ *
+ * <h1>实用功能</h1>
+ *
+ * <pre>
+ * 1. Let's verify some behaviour! 让我们验证一些行为！
+ * 2. How about some stubbing? 存根怎么样？
+ * 4. Verifying exact number of invocations 验证确切的调用次数
+ * 5. Stubbing void methods with exceptions 存根带异常的void方法
+ * 6. Verification in order 验证顺序
+ * 9. Shorthand for mocks creation - @Mock annotation 模拟对象创建的简写——@Mock注解
+ * 10. Stubbing consecutive calls</a> (iterator-style stubbing) 存根连续地调用(迭代器式存根)
+ * 12. doReturn()|doThrow()|doAnswer()|doNothing()|doCallRealMethod() family of methods doXxx方法家族
+ * 13. Spying on real objects 侦察真实的对象
+ * 18. Troubleshooting & validating framework usage 故障排除和验证框架的使用
+ * 21. New annotations: @Captor, @Spy, @InjectMocks 新的注解：@Captor，@Spy，@InjectMocks
+ * 23. Automatic instantiation of @Spies, @InjectMocks and constructor injection goodness 自动实例化@Spies，@InjectMocks和构造函数注入良好性
+ * 26. Mocking details 模拟细节 (Improved in 2.2.x)
+ * 39. Mocking final types, enums and final methods 模拟最终类型，枚举和最终方法 (Since 2.1.0)
+ * 40. Improved productivity and cleaner tests with "stricter" Mockito 使用"限制器"提高生产率和更清洁的测试 (Since 2.+)
+ * 41. Advanced public API for framework integrations 用于框架集成的高级公共API (Since 2.10.+)
+ * 42. New API for integrations: listening on verification start events 集成的新API：监听验证开始事件 (Since 2.11.+)
+ * 43. New API for integrations: MockitoSession is usable by testing frameworks 集成的新API：会话可通过测试框架使用 (Since 2.15.+)
+ * 45. New JUnit Jupiter (JUnit5+) extension 新的JUnit Jupiter (JUnit5+)扩展
+ * </pre>
  *
  * <h1>Contents</h1>
  *
@@ -1741,7 +1764,7 @@ import org.mockito.verification.VerificationWithTimeout;
  *     </li>
  *     现在，它扩展了{@link Answer}接口。它是向后兼容的，因为模拟接口是不可扩展的(请参阅{@link NotExtensible)。
  *     更改对我们的用户应该是无缝的。
- *     <li>Deprecated {@link InternalMockHandler} -
+ *     <li>Deprecated {@link org.mockito.internal.InternalMockHandler} -
  *       In order to accommodate API changes we needed to deprecate this interface.
  *       The interface was always documented as internal, we don't have evidence it was used by the community.
  *       The deprecation should be completely seamless for our users.
