@@ -107,7 +107,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *      <a href="#47">47. New API for clearing mock state in inline mocking 用于清除内联模拟中的模拟状态的新API (Since 2.25.0) </a><br/>
  * </b>
  *
- * <h3 id="0">0. <a class="meaningful_link" href="#mockito2" name="mockito2">Migrating to Mockito 2</a></h3>
+ * <h3 id="0">0. <a class="meaningful_link" href="#mockito2" name="mockito2">
+ *     Migrating to Mockito 2 迁移到Mockito 2</a></h3>
  *
  * In order to continue improving Mockito and further improve the unit testing experience, we want you to upgrade to 2.1.0!
  * Mockito follows <a href="http://semver.org/">semantic versioning</a> and contains breaking changes only on major version upgrades.
@@ -116,6 +117,11 @@ import org.mockito.verification.VerificationWithTimeout;
  * For a comprehensive guide on the new release including incompatible changes,
  * see '<a href="https://github.com/mockito/mockito/wiki/What%27s-new-in-Mockito-2">What's new in Mockito 2</a>' wiki page.
  * We hope that you enjoy Mockito 2!
+ * 为了继续改进Mockito并进一步改善单元测试体验，我们希望您升级到最新的稳定版！
+ * Mockito遵循语义版本控制，并且仅在主要版本升级中包含重大更改。
+ * 在库的生命周期中，必须进行重大更改才能推出一组全新的功能，这些功能可以更改现有行为甚至更改API。
+ * 有关新版本的全面指南，包括不兼容的更改，请参阅"Mockito 2的新增功能"维基页面。
+ * 我们希望您喜欢Mockito 2！
  *
  * <h3 id="0.1">0.1. <a class="meaningful_link" href="#mockito-android" name="mockito-android">Mockito Android support</a></h3>
  *
