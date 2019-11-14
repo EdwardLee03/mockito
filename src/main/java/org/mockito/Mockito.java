@@ -365,7 +365,8 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="5">5. <a class="meaningful_link" href="#stubbing_with_exceptions" name="stubbing_with_exceptions">Stubbing void methods with exceptions</a></h3>
+ * <h3 id="5">5. <a class="meaningful_link" href="#stubbing_with_exceptions" name="stubbing_with_exceptions">
+ *     Stubbing void methods with exceptions 存根带异常的void方法</a></h3>
  *
  * <pre class="code"><code class="java">
  *   doThrow(new RuntimeException()).when(mockedList).clear();
@@ -375,6 +376,7 @@ import org.mockito.verification.VerificationWithTimeout;
  * </code></pre>
  *
  * Read more about <code>doThrow()</code>|<code>doAnswer()</code> family of methods in <a href="#12">section 12</a>.
+ * 在第12节中了解有关doThrow()|doAnswer()系列方法的更多信息。
  * <p>
  *
  * <h3 id="6">6. <a class="meaningful_link" href="#in_order_verification" name="in_order_verification">Verification in order</a></h3>
