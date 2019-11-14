@@ -1221,14 +1221,20 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="28">28. <a class="meaningful_link" href="#mock_maker_plugin" name="mock_maker_plugin"><code>MockMaker</code> API</a> (Since 1.9.5)</h3>
+ * <h3 id="28">28. <a class="meaningful_link" href="#mock_maker_plugin" name="mock_maker_plugin">
+ *     <code>MockMaker</code> API 模拟制作器API</a> (Since 1.9.5)</h3>
+ *
  * <p>Driven by requirements and patches from Google Android guys Mockito now offers an extension point
  *   that allows replacing the proxy generation engine. By default, Mockito uses <a href="https://github.com/raphw/byte-buddy">Byte Buddy</a>
  *   to create dynamic proxies.
+ *   在Google Android专家的要求和补丁的推动下，Mockito现在提供了一个扩展点，可以替换代理生成引擎。
+ *   默认情况下，Mockito使用Byte Buddy创建动态代理。
  * <p>The extension point is for advanced users that want to extend Mockito. For example, it is now possible
  *   to use Mockito for Android testing with a help of <a href="https://github.com/crittercism/dexmaker">dexmaker</a>.
+ *   扩展点适用于想要扩展Mockito的高级用户。例如，现在可以在dexmaker的帮助下将Mockito用于Android测试。
  * <p>For more details, motivations and examples please refer to
  * the docs for {@link org.mockito.plugins.MockMaker}.
+ * 有关更多详细信息，动机和示例代码，请参阅{@link MockMaker}的文档。
  *
  *
  *
