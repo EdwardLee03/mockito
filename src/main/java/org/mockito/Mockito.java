@@ -1299,9 +1299,12 @@ import org.mockito.verification.VerificationWithTimeout;
  *
  *
  *
- * <h3 id="31">31. <a class="meaningful_link" href="#serilization_across_classloader" name="serilization_across_classloader">Mockito mocks can be <em>serialized</em> / <em>deserialized</em> across classloaders (Since 1.10.0)</a></h3>
+ * <h3 id="31">31. <a class="meaningful_link" href="#serilization_across_classloader" name="serilization_across_classloader">
+ *     Mockito mocks can be <em>serialized</em> / <em>deserialized</em> across classloaders
+ *     Mockito模拟可以跨类加载器的序列化/反序列化 (Since 1.10.0)</a></h3>
  *
  * Mockito introduces serialization across classloader.
+ * Mockito引入了跨类加载器的序列化。
  *
  * Like with any other form of serialization, all types in the mock hierarchy have to serializable, inclusing answers.
  * As this serialization mode require considerably more work, this is an opt-in setting.
